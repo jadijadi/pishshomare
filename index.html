@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fa">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="جستجوی پیش شماره و کد استان ها و شهرهای ایران">
+    <meta name="author" content="جادی">
+
+    <script src="js/angular.js"></script>
+    <script src="js/app.js"></script>
+    <link rel="stylesheet" href="css/jadi.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap-rtl.css">
+    <link rel="stylesheet" href="css/fontfaces.css">
+  </head>
+
+  <body ng-app="MyApp">
+
+
+<div class="container-fluid">
+<div class="row">
+
+<div class="well">
+	<h2>فهرست کد و  پیش شماره تلفن استان های ایران </h2>
+</div>
+
+    <div ng-controller="MyCtrl" >     
+      <h3>پیش شماره یا نام شهر را وارد کنید</h3>
+      <form class="form-inline">
+        <input ng-model="query" type="text" placeholder="جستجو" autofocus>
+      </form>
+      <ul ng-repeat="friend in friends | filter: query | orderBy: 'name' ">
+        <li>{{friend.name}}<div class=eng>({{friend.eng}})</div></small></li>
+      </ul>
+    </div>
+
+<div class="footer">
+<div class="well">
+	<p>توسط <a href=http://jadi.net>جادی</a> در جواب به 
+<a href="http://jadi.net/2015/02/%D9%88%D8%B6%D8%B9%DB%8C%D8%AA-%D8%A7%D8%B3%D9%81-%D8%A8%D8%A7%D8%B1-%D8%B3%D8%A7%DB%8C%D8%AA-%D9%87%D8%A7%DB%8C-%D8%AF%D9%88%D9%84%D8%AA%DB%8C-%D9%88-%D8%A8%DB%8C%DA%A9%D8%A7%D8%B1%DB%8C-%D8%A8%D9%87/">مشکل کاربری سایت مخابرات</a>
+</p>
+</div>
+</div>
+
+</div> <!-- row -->
+</div>
+
+  </body>
+
+</html>
