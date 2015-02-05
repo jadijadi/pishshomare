@@ -1,0 +1,40 @@
+/* 
+ * Droid Arabic Naskh (Arabic) http://www.google.com/fonts/earlyaccess
+ */
+@font-face {
+  font-family: 'Droid Arabic Naskh';
+  font-style: normal;
+  font-weight: 400;
+  src: url(//themes.googleusercontent.com/static/fonts/earlyaccess/droidarabicnaskh/v6/DroidNaskh-Regular.eot);
+  src: url(//themes.googleusercontent.com/static/fonts/earlyaccess/droidarabicnaskh/v6/DroidNaskh-Regular.eot?#iefix) format('embedded-opentype'),
+       url(//themes.googleusercontent.com/static/fonts/earlyaccess/droidarabicnaskh/v6/DroidNaskh-Regular.woff2) format('woff2'),
+       url(//themes.googleusercontent.com/static/fonts/earlyaccess/droidarabicnaskh/v6/DroidNaskh-Regular.woff) format('woff'),
+       url(//themes.googleusercontent.com/static/fonts/earlyaccess/droidarabicnaskh/v6/DroidNaskh-Regular.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Droid Arabic Naskh';
+  font-style: normal;
+  font-weight: 700;
+  src: url(//themes.googleusercontent.com/static/fonts/earlyaccess/droidarabicnaskh/v6/DroidNaskh-Bold.eot);
+  src: url(//themes.googleusercontent.com/static/fonts/earlyaccess/droidarabicnaskh/v6/DroidNaskh-Bold.eot?#iefix) format('embedded-opentype'),
+       url(//themes.googleusercontent.com/static/fonts/earlyaccess/droidarabicnaskh/v6/DroidNaskh-Bold.woff2) format('woff2'),
+       url(//themes.googleusercontent.com/static/fonts/earlyaccess/droidarabicnaskh/v6/DroidNaskh-Bold.woff) format('woff'),
+       url(//themes.googleusercontent.com/static/fonts/earlyaccess/droidarabicnaskh/v6/DroidNaskh-Bold.ttf) format('truetype');
+}
+
+
+body {
+        font-family: "Droid Arabic Naskh", Helvetica, Arial, sans-serif; !imtortant
+}
+body.custom-font-enabled {
+        font-family: "Droid Arabic Naskh", Tahoma, "Open Sans", Helvetica, Arial, sans-serif;  !imtortant
+}
+
+/*
+body {
+        font-family: Tahoma, Helvetica, Arial, sans-serif; !imtortant
+}
+body.custom-font-enabled {
+        font-family: Tahoma, "Open Sans", Helvetica, Arial, sans-serif;  !imtortant
+}
+*/
