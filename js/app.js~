@@ -33,10 +33,6 @@ app.controller("MyCtrl", function($scope) {
     { name:  "هرمزگان	۰۷۶", eng: "Hormozgan 076"}, 
     { name:  "همدان	۰۸۱", eng: "Hamedan 081"}, 
     { name:  "یزد	۰۳۵", eng: "Yazd 035"}
-
-
-
-
   ];
 
   $scope.filterFunction = function(element) {
