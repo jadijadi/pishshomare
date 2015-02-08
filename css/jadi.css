@@ -6,7 +6,44 @@
 
 body {
 	text-align: center;
+	font-size: 16px;
+	padding-bottom: 6.25em;
+}
 
+body .header .well{
+	background: #333;
+	border-bottom: solid 1px #222;
+	color: white;
+	margin-bottom: 2em;
+	border-radius: 0;
+	border: 0;
+
+
+}
+
+body input {
+	line-height: 2em !important;
+}
+
+body .footer {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	box-shadow: 0 -.04em 1em rgb(44, 44, 44);
+}
+
+body .footer .well{
+	background: #333;
+	border-bottom: solid 1px #222;
+	color: white;
+	margin-bottom: 0;
+	border-radius: 0;
+	border: 0;
+	padding: 1em;
+}
+
+body .footer .well p {
+	margin-bottom: 0;
 }
 
 table {
