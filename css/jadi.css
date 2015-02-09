@@ -44,7 +44,6 @@ body .footer .well{
 
 body .footer .well p {
 	margin-bottom: 0;
-	line-height: 1.5em;
 }
 
 table {
@@ -67,12 +66,4 @@ table {
 
 .form-group-lg .form-control {
 	text-align:center;
-}
-
-@media (max-width: 767px){
-	.header h2{
-		font-size: 1em;
-		margin: 0;
-		line-height: 1.5;
-	}
 }
