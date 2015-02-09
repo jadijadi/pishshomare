@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fa">
+<<<<<<< HEAD
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -79,6 +80,75 @@
 
         </div> <!-- row -->
     </div>
+=======
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>جستجوی پیش‌شماره و کد تلفن و موبایل استان‌ها و شهرهای ایران و جهان</title>
+    <meta name="description" content="جستجوی پیش شماره و کد استان ها و شهرهای ایران">
+    <meta name="author" content="جادی">
+
+    <link rel="stylesheet" href="css/jadi.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-rtl.css">
+    <link rel="stylesheet" href="css/fontfaces.css">
+    <link rel="stylesheet" href="css/animate.css">
+  </head>
+
+  <body ng-app="MyApp">
+
+
+<div class="container-fluid">
+<div class="header row">
+	<div class="well">
+		<h2>فهرست کد و پیش‌شماره تلفن و موبایل استان‌ها و شهرهای ایران و جهان</h2>
+	</div>
+</div>
+<div class="row">
+
+
+<div class="col-md-3"></div>
+
+<div class="col-md-6"> <!-- middle colmd -->
+
+	    <div ng-controller="MyCtrl" >     
+
+	      <form class="form-horizontal">
+	  	<div class="form-group form-group-lg">
+		<input  class="form-control " ng-model="query" type="text" placeholder="پیش شماره یا نام شهر، کشور یا سرویس دهنده" autofocus>
+	  	</div>
+	      </form>
+
+		<table class="table table-striped">
+	      <tr  ng-repeat="friend in friends | filter: query | orderBy: 'name' ">
+		<td>{{friend.name}}<div class=eng>{{friend.eng}}</div></td>
+	      </tr>
+		</table>
+
+	    </div>
+
+</div> <!-- colmd middle -->
+<div class="col-md-3"></div>
+
+</div> <!-- row for content-->
+
+<div class="footer row">
+	<div >
+	<div class="well">
+		<p>توسط <a href=http://jadi.net>جادی</a> برای نشان دادن 
+	<a href="http://jadi.net/2015/02/%D9%88%D8%B6%D8%B9%DB%8C%D8%AA-%D8%A7%D8%B3%D9%81-%D8%A8%D8%A7%D8%B1-%D8%B3%D8%A7%DB%8C%D8%AA-%D9%87%D8%A7%DB%8C-%D8%AF%D9%88%D9%84%D8%AA%DB%8C-%D9%88-%D8%A8%DB%8C%DA%A9%D8%A7%D8%B1%DB%8C-%D8%A8%D9%87/">مشکل کاربری سایت ۱۱۸ مخابرات استان تهران</a>.
+<br><small class="hidden-xs">
+ برای نقد و نظر و پیشنهاد <a href=http://jadi.net/2015/02/%DA%A9%D8%AF-%D8%A7%D8%B3%D8%AA%D8%A7%D9%86-%D9%87%D8%A7-%D9%88-%D8%B4%D9%87%D8%B1%D8%B3%D8%AA%D8%A7%D9%86-%D9%87%D8%A7/>به پست وبلاگ مربوط به این موضوع</a> یا صفحه <a href=https://github.com/jadijadi/pishshomare>پروژه روی گیت هاب</a> مراجعه کنید.</small>
+	</p>
+	</div>
+	</div>
+
+
+
+</div> <!-- row -->
+</div>
+>>>>>>> 9db6b1ba1ea383b44fd78e6185f89755295eb5bf
 
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.min.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular-animate.min.js"></script>
