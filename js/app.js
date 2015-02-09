@@ -146,7 +146,7 @@ app.factory("CodeSrv",function(){
       { name:"عراق ۰۰۹۶۴", eng: "Iraq 00964"},
       { name:"ایرلند ۰۰۳۵۳", eng: "Ireland 00353"},
       { name:"جزیره من ۰۰۴۴", eng: "Isle of Man 0044"},
-      { name:"اسرلئیل ۰۰۹۷۲", eng: "Israel 00972"},
+      { name:"اسرائیل ۰۰۹۷۲", eng: "Israel 00972"},
       { name:"ایتالیا ۰۰۳۹", eng: "Italy 0039"},
       { name:"ساحل عاج ۰۰۲۲۵", eng: "Ivory Coast 00225"},
       { name:"جامايیکا  ۰۰۱۸۷۶", eng: "Jamaica 001876"},
