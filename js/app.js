@@ -146,7 +146,7 @@ app.factory("CodeSrv",function(){
       { name:"عراق ۰۰۹۶۴", eng: "Iraq 00964"},
       { name:"ایرلند ۰۰۳۵۳", eng: "Ireland 00353"},
       { name:"جزیره من ۰۰۴۴", eng: "Isle of Man 0044"},
-      { name:"اسرلئیل ۰۰۹۷۲", eng: "Israel 00972"},
+      { name:"اسرائیل ۰۰۹۷۲", eng: "Israel 00972"},
       { name:"ایتالیا ۰۰۳۹", eng: "Italy 0039"},
       { name:"ساحل عاج ۰۰۲۲۵", eng: "Ivory Coast 00225"},
       { name:"جامايیکا  ۰۰۱۸۷۶", eng: "Jamaica 001876"},
@@ -276,7 +276,7 @@ app.factory("CodeSrv",function(){
       { name:"ونزوئلا ۰۰۵۸", eng: "Venezuela 0058"},
       { name:"ویتنام ۰۰۸۴", eng: "Vietnam 0084"},
       { name:"والیس و فوتونا ۰۰۶۸۱", eng: "Wallis and Futuna 00681"},
-      { name:"بانک غرب ۰۰۹۷۰", eng: "West Bank 00970"},
+      { name:"کرانه باختری رود اردن ۰۰۹۷۰", eng: "West Bank 00970"},
       { name:"یمن ۰۰۹۶۷", eng: "Yemen 00967"},
       { name:"زامبیا ۰۰۲۶۰", eng: "Zambia 00260"},
       { name:"زیمباوه ۰۰۲۶۳", eng: "Zimbabwe 00263"}
