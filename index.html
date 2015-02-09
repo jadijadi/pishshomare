@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="css/animate.css">
   </head>
 
-  <body ng-app="MyApp">
+  <body ng-app="MyApp" ng-controller="MainCtrl">
 
 
 <div class="container-fluid">
@@ -23,6 +23,21 @@
 	<div class="well">
 		<h2>فهرست کد و پیش‌شماره تلفن و موبایل استان‌ها و شهرهای ایران و جهان</h2>
 	</div>
+    <nav class="navbar navbar-default">
+      
+    <div class="container">
+        <div class="container-fluid">
+            <ul class="nav navbar-nav navbar-right">
+
+                <li class="active"><a href="#/estates">کد استان ها و موبایل</a></li>
+                <li><a href="#/countries">کد کشور ها</a></li>
+                <li><a href="#/plates">پلاک خودرو</a></li>
+                
+            </ul>
+        </div>
+    </div>
+    </nav>
+
 </div>
 <div class="row">
 
@@ -31,21 +46,9 @@
 
 <div class="col-md-6"> <!-- middle colmd -->
 
-	    <div ng-controller="MyCtrl" >     
-
-	      <form class="form-horizontal">
-	  	<div class="form-group form-group-lg">
-		<input  class="form-control " ng-model="query" type="text" placeholder="پیش شماره یا نام شهر، کشور یا سرویس دهنده" autofocus>
-	  	</div>
-	      </form>
-
-		<table class="table table-striped">
-	      <tr  ng-repeat="friend in friends | filter: query | orderBy: 'name' ">
-		<td>{{friend.name}}<div class=eng>{{friend.eng}}</div></td>
-	      </tr>
-		</table>
-
-	    </div>
+	    <div ng-view>
+            
+        </div>
 
 </div> <!-- colmd middle -->
 <div class="col-md-3"></div>
@@ -57,7 +60,8 @@
 	<div class="well">
 		<p>توسط <a href=http://jadi.net>جادی</a> برای نشان دادن 
 	<a href="http://jadi.net/2015/02/%D9%88%D8%B6%D8%B9%DB%8C%D8%AA-%D8%A7%D8%B3%D9%81-%D8%A8%D8%A7%D8%B1-%D8%B3%D8%A7%DB%8C%D8%AA-%D9%87%D8%A7%DB%8C-%D8%AF%D9%88%D9%84%D8%AA%DB%8C-%D9%88-%D8%A8%DB%8C%DA%A9%D8%A7%D8%B1%DB%8C-%D8%A8%D9%87/">مشکل کاربری سایت ۱۱۸ مخابرات استان تهران</a>.
-<br><small>
+<br>
+<small class="hidden-xs">
  برای نقد و نظر و پیشنهاد <a href=http://jadi.net/2015/02/%DA%A9%D8%AF-%D8%A7%D8%B3%D8%AA%D8%A7%D9%86-%D9%87%D8%A7-%D9%88-%D8%B4%D9%87%D8%B1%D8%B3%D8%AA%D8%A7%D9%86-%D9%87%D8%A7/>به پست وبلاگ مربوط به این موضوع</a> یا صفحه <a href=https://github.com/jadijadi/pishshomare>پروژه روی گیت هاب</a> مراجعه کنید.</small>
 	</p>
 	</div>
@@ -68,8 +72,10 @@
 </div> <!-- row -->
 </div>
 
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.min.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular-animate.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular-route.min.js"></script>
 <script src="js/app.js"></script>
 
 <script>

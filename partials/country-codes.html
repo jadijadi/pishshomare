@@ -1,0 +1,14 @@
+<div >     
+	<form class="form-horizontal">
+	  	<div class="form-group form-group-lg">
+			<input  class="form-control " ng-model="query" type="text" placeholder="پیش شماره یا نام کشور" autofocus>
+	  	</div>
+	</form>
+
+	<table class="table table-striped">
+		<tr  ng-repeat="countryCode in countryCodes | filter: query | orderBy: 'name' ">
+			<td>{{countryCode.name}}<div class=eng>{{countryCode.eng}}</div></td>
+	    </tr>
+	</table>
+
+</div>
