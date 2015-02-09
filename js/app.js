@@ -31,27 +31,22 @@ app.controller("MainCtrl",['$scope', function($scope) {
 
 
     });
+    $scope.filterFunction = function(element) {
+            return element.name.match(/^Ma/) ? true : false;
+        }
 }]);
 
 app.controller("EstateCodesCtrl",['$scope','CodeSrv', function($scope,CodeSrv) {
     $scope.estateCodes = CodeSrv.getEstateCodes();    
-    $scope.filterFunction = function(element) {
-            return element.name.match(/^Ma/) ? true : false;
-        }
 }]);
 
 app.controller("CountryCodesCtrl",['$scope','CodeSrv', function($scope,CodeSrv) {
     $scope.countryCodes = CodeSrv.getCountryCodes();
-    $scope.filterFunction = function(element) {
-            return element.name.match(/^Ma/) ? true : false;
-        }
 }]);
 
 app.controller("PlatesCtrl",['$scope','CodeSrv', function($scope,CodeSrv) {
     $scope.plates = CodeSrv.getPlates();  
-    $scope.filterFunction = function(element) {
-            return element.name.match(/^Ma/) ? true : false;
-        }
+    
 }]);
 
 app.factory("CodeSrv",function(){
