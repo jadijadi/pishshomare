@@ -9,11 +9,12 @@
         <meta name="description" content="جستجوی پیش شماره و کد استان ها و شهرهای ایران">
         <meta name="author" content="جادی">
 
-        <link rel="stylesheet" href="css/jadi.css">
+
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/bootstrap-rtl.css">
         <link rel="stylesheet" href="css/fontfaces.css">
         <link rel="stylesheet" href="css/animate.css">
+        <link rel="stylesheet" href="css/jadi.css">
     </head>
 
     <body ng-app="MyApp">
@@ -22,7 +23,7 @@
         <div class="container-fluid">
             <div class="header row">
                 <div class="well">
-                    <h3>فهرست کد و پیش‌شماره تلفن ، موبایل و پلاک خودرو استان‌ها و شهرهای ایران و جهان</h3>
+                    <h4>فهرست کد و پیش‌شماره تلفن ، موبایل و پلاک خودرو استان‌ها و شهرهای ایران و جهان</h4>
                 </div>
             </div>
             <div class="row">
@@ -31,37 +32,67 @@
                     <div class="col-md-12">
                         <form class="form-horizontal">
                             <div class="form-group form-group-lg">
-                                <input  class="form-control " ng-model="query" type="text" placeholder="پیش شماره یا نام شهر، کشور، سرویس دهنده یا شماره پلاک" autofocus>
+                                <input  class="form__search" ng-model="query" type="text" placeholder="پیش شماره یا نام شهر، کشور، سرویس دهنده یا شماره پلاک" autofocus>
                             </div>
                         </form>
                     </div>
                 </div>
-                <div class="col-md-6"> <!-- middle colmd -->
-                    <h5>فهرست کد و پیش‌شماره تلفن و موبایل استان‌ها و شهرهای ایران و جهان</h5>
-                    <div ng-controller="MyCtrl" >     
+                <div class="container">
+                    <div class="col-md-3"> <!-- middle colmd -->
 
-                        <table class="table table-striped">
-                            <tr  ng-repeat="friend in friends | filter: query | orderBy: 'name' ">
-                                <td>{{friend.name}}<div class=eng>{{friend.eng}}</div></td>
-                            </tr>
-                        </table>
+                        <h5> پیش‌شماه شهرها و استان‌های ایران</h5>
+                        <div class="codes" ng-controller="MyCtrl" >     
+
+                            <table class="table table-striped">
+                                <tr  ng-repeat="friend in friends | filter: query | orderBy: 'name' ">
+                                    <td><p>{{friend.name}}</p><div class=eng>{{friend.eng}}</div></td>
+                                </tr>
+                            </table>
+
+                        </div>
+
+                    </div> <!-- colmd middle -->
+                    <div class="col-md-3">
+                        <h5>پیش‌شماره موبایل</h5>
+                        <div class="mobile" ng-controller="MyCtrl" >     
+
+                            <table class="table table-striped">
+                                <tr  ng-repeat="mobile in mobiles | filter: query | orderBy: 'name' ">
+                                    <td><p>{{mobile.name}}</p><div class=eng>{{mobile.eng}}</div></td>
+                                </tr>
+                            </table>
+
+                        </div>
 
                     </div>
+                    <div class="col-md-3">
 
-                </div> <!-- colmd middle -->
-                <div class="col-md-6">
-                    <h5>فهرست شماره پلاک خودرو در شهرهای ایران و حومه</h5>
-                    <div ng-controller="MyCtrl" >     
+                        <h5>پیش‌شماره کشورها</h5>
+                        <div class="country" ng-controller="MyCtrl" >     
 
-                        <table class="table table-striped">
-                            <tr  ng-repeat="plate in plates | filter: query | orderBy: 'name' ">
-                                <td>{{plate.name}}<div class=eng>{{plate.eng}}</div></td>
-                            </tr>
-                        </table>
+                            <table class="table table-striped">
+                                <tr  ng-repeat="country in countrys | filter: query | orderBy: 'name' ">
+                                    <td><p>{{country.name}}</p><div class=eng>{{country.eng}}</div></td>
+                                </tr>
+                            </table>
+
+                        </div>
 
                     </div>
+                    <div class="col-md-3">
+                        <h5>شماره پلاک خودروها</h5>
+                        <div class="plate" ng-controller="MyCtrl" >     
 
-                </div>
+                            <table class="table table-striped">
+                                <tr  ng-repeat="plate in plates | filter: query | orderBy: 'name' ">
+                                    <td><p>{{plate.name}}</p><div class=eng>{{plate.eng}}</div></td>
+                                </tr>
+                            </table>
+
+                        </div>
+
+                    </div>
+                </div> <!-- container for content-->
 
             </div> <!-- row for content-->
 

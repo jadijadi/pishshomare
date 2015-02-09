@@ -1,78 +1,144 @@
 .eng {
-	font-size: 0.9em;
-	color: #ADAAAA;
-	margin-top: 8pt;
+    font-size: 0.9em;
+    color: #ADAAAA;
+    margin-top: 8pt;
+    text-align: left;
+    direction: ltr;
 }
 
 body {
-	text-align: center;
-	font-size: 16px;
-	padding-bottom: 6.25em;
+    -webkit-font-smoothing: antialiased;
+    text-align: center;
+    font-size: 16px;
+    padding-bottom: 6.25em;
 }
 
 body .header .well{
-	background: #333;
-	border-bottom: solid 1px #222;
-	color: white;
-	margin-bottom: 2em;
-	border-radius: 0;
-	border: 0;
+    background: #706589;
+    border-bottom: solid 3px #655B7B;
+    color: white;
+    margin-bottom: 2em;
+    border-radius: 0;
+
 
 
 }
 
 body input {
-	line-height: 2em !important;
+    line-height: 2em !important;
 }
 
 body .footer {
-	position: fixed;
-	bottom: 0;
-	width: 100%;
-	box-shadow: 0 -.04em 1em rgb(44, 44, 44);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -0.01em 1em rgb(215, 215, 215)
 }
 
 body .footer .well{
-	background: #333;
-	border-bottom: solid 1px #222;
-	color: white;
-	margin-bottom: 0;
-	border-radius: 0;
-	border: 0;
-	padding: 1em;
+    background: #444;
+    border-bottom: solid 1px #222;
+    color: white;
+    margin-bottom: 0;
+    border-radius: 0;
+    border: 0;
+    padding: 1em;
+}
+a{
+    color: #98CEF3;
+    text-decoration: none;
+}
+a:hover{
+    color:#fff;
 }
 
 body .footer .well p {
-	margin-bottom: 0;
-	line-height: 1.5em;
+    margin-bottom: 0;
+    line-height: 1.5em;
 }
 
 table {
-	font-size: 1.7em;
+    font-size: 1.7em;
 }
 
 .ng-enter, .ng-move{
-	-webkit-animation: fadeIn 0.5s;
-	-moz-animation: fadeIn 0.5s;
-	-o-animation: fadeIn 0.5s;
-	animation: fadeIn 0.5s;
+    -webkit-animation: fadeIn 0.5s;
+    -moz-animation: fadeIn 0.5s;
+    -o-animation: fadeIn 0.5s;
+    animation: fadeIn 0.5s;
 }
 
 .ng-leave{
-	-webkit-animation: fadeOut 0.5s;
-	-moz-animation: fadeOut 0.5s;
-	-o-animation: fadeOut 0.5s;
-	animation: fadeOut 0.5s;
+    -webkit-animation: fadeOut 0.5s;
+    -moz-animation: fadeOut 0.5s;
+    -o-animation: fadeOut 0.5s;
+    animation: fadeOut 0.5s;
 }
 
 .form-group-lg .form-control {
-	text-align:center;
+    text-align:center;
 }
 
+.form__search {
+    width: 100%;
+    padding: 1rem;
+    font-size: 2rem;
+    font-weight: 300;
+    border: 2px solid #dedede;
+    border-radius: 3px;
+    background-color: transparent;
+    -webkit-appearance: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+tr td{
+    text-align: right;
+    font-size: 14px;
+    border: 1px solid #eee;
+    margin-bottom: 3px;
+    border-right-width: 5px;
+    border-radius: 3px;
+}
+.codes tr td:before{
+    font-family: 'Glyphicons Halflings';
+    font-size: 19px;
+    color:#ddd;
+    height: 100%;
+    margin: 0px 5px 0px 10px;
+    content: "\e183";
+}
+
+.mobile tr td:before{
+    font-family: 'Glyphicons Halflings';
+    font-size: 16px;
+    color:#ddd;
+    height: 100%;
+    margin: 0px 5px 0px 10px;
+    content: "\e145";
+}
+.country tr td:before{
+    font-family: 'Glyphicons Halflings';
+    font-size: 16px;
+    color:#ddd;
+    height: 100%;
+    margin: 0px 5px 0px 10px;
+    content: "\e135";
+}
+.plate tr td:before{
+    font-family: 'Glyphicons Halflings';
+    font-size: 16px;
+    color:#ddd;
+    height: 100%;
+    margin: 0px 5px 0px 10px;
+    content: "\e040";
+}
+
+
 @media (max-width: 767px){
-	.header h2{
-		font-size: 1em;
-		margin: 0;
-		line-height: 1.5;
-	}
+    .header h2{
+        font-size: 1em;
+        margin: 0;
+        line-height: 1.5;
+    }
 }

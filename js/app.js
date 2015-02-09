@@ -3,6 +3,8 @@ var app = angular.module("MyApp",['ngAnimate']);
 app.controller("MyCtrl", ['$scope','CodeSrv',function($scope,CodeSrv) {
     $scope.friends = CodeSrv.getCodes();
     $scope.plates = CodeSrv.getPlates();
+    $scope.mobiles = CodeSrv.getMobileCodes();
+    $scope.countrys = CodeSrv.getCountryCodes();
     $scope.filterFunction = function(element) {
         return element.name.match(/^Ma/) ? true : false;
     };
@@ -12,35 +14,36 @@ app.controller("MyCtrl", ['$scope','CodeSrv',function($scope,CodeSrv) {
 
 app.factory("CodeSrv",function(){
     var plates = [
-        { name:  "آذربایجان شرقی ۱۵،۲۵،۳۵", eng: "Azerbaijan East 15,25,35"}, 
-        { name:  "آذربایجان غربی ۱۷،۲۷،۳۷", eng: "Azerbaijan West 17,27,37"}, 
-        { name:  "اردبیل ۹۱", eng: "Ardabil 91"}, 
-        { name:  "اصفهان ۱۳،۲۳،۴۳،۵۳", eng: "Isfahan 13,23,43,53"}, 
-        { name:  "البرز ۲۱،۶۸،۷۸", eng: "Alborz 21,68,78"}, 
-        { name:  "ایلام ۹۸", eng: "Ilam 98"}, 
-        { name:  "بوشهر ۴۸،۵۸", eng: "Bushehr 48,58"}, 
-        { name:  "تهران ۱۱،۲۲،۳۳،۴۴،۵۵،۶۶،۷۷،۸۸،۹۹،۱۰،۲۰،۳۰،۴۰،۵۰،۶۰،۷۰،۸۰،۹۰", eng: "Tehran 11,22,33,44,55,66,77,88,99,10,20,30,40,50,60,70,80,90"}, 
-        { name:  "چهارمحال و بختیاری ۷۱،۸۱", eng: "Chahar-Mahaal-Bakhtiari 71,81"}, 
-        { name:  "خراسان جنوبی ۱۲،۳۲،۴۲،۵۲", eng: "Khorasan 12,32,42,52"}, 
-        { name:  "خوزستان ۱۴،۲۴،۳۴", eng: "Khuzestan 14,24,34"}, 
-        { name:  "زنجان ۸۷،۹۷", eng: "Zanjan 87,97"}, 
-        { name:  "سمنان ۸۶،۹۶", eng: "Semnan 86,96"}, 
-        { name:  "سیستان و بلوچستان ۸۵،۹۵", eng: "Sistan-Baluchestan 85,95"}, 
-        { name:  "فارس ۶۳،۷۳،۸۳،۹۳", eng: "Fars 63,73,83,93"}, 
-        { name:  "قزوین ۷۹،۸۹", eng: "Qazvin 79,89"}, 
-        { name:  "قم ۱۶،۲۶،۳۶", eng: "Qom 16,26,36"}, 
-        { name:  "کردستان ۵۱،۶۱", eng: "Kurdistan 51,61"}, 
-        { name:  "کرمان ۴۵،۶۵،۷۵", eng: "Kerman 45,65,75"}, 
-        { name:  "کرمانشاه ۱۹،۲۹،۳۹", eng: "Kermanshah 19,29,39"}, 
-        { name:  "کهگیلویه و بویراحمد ۴۹", eng: "Kohgiluyeh-Boyer-Ahmad 49"}, 
-        { name:  "گلستان ۵۹،۶۹", eng: "Golestan 59,69"}, 
-        { name:  "گیلان ۴۶،۵۶،۷۶", eng: "Gilan 46,56,76"}, 
-        { name:  "لرستان ۳۱،۴۱", eng: "Lorestan 31,41"}, 
-        { name:  "مازندران ۶۲،۷۲،۸۲،۹۲", eng: "Mazandaran 62,72,82,92"}, 
-        { name:  "مرکزی ۴۷،۵۷،۶۷", eng: "Markazi 47,57,67"}, 
-        { name:  "هرمزگان ۸۴،۹۴", eng: "Hormozgan 84,94"}, 
-        { name:  "همدان ۱۸،۲۸،۳۸", eng: "Hamadan 18,28,38"}, 
-        { name:  "یزد ۵۴،۶۴،۷۴", eng: "Yazd 54,64,74"}
+        { name:  "آذربایجان شرقی ۱۵  ،  ۲۵ ، ۳۵" ,  eng: "Azerbaijan East 15 , 25 , 35"},  
+        { name:  "آذربایجان غربی ۱۷ ، ۲۷ ، ۳۷" ,  eng: "Azerbaijan West 17 , 27 , 37"},  
+        { name:  "اردبیل ۹۱" ,  eng: "Ardabil 91"},  
+        { name:  "اصفهان ۱۳ ، ۲۳ ، ۴۳ ، ۵۳" ,  eng: "Isfahan 13 , 23 , 43 , 53"},  
+        { name:  "البرز ۲۱ ، ۶۸ ، ۷۸" ,  eng: "Alborz 21 , 68 , 78"}, 
+        { name:  "ایلام ۹۸" ,  eng: "Ilam 98"},  
+        { name:  "بوشهر ۴۸ ، ۵۸" ,  eng: "Bushehr 48 , 58"},  
+        { name:  "تهران ۱۱ ، ۲۲ ، ۳۳ ، ۴۴ ، ۵۵ ، ۶۶ ، ۷۷ ، ۸۸ ، ۹۹ ، ۱۰ ، ۲۰ ، ۳۰ ، ۴۰ ، ۵۰ ، ۶۰ ، ۷۰ ، ۸۰ ، ۹۰" ,  eng: "Tehran 11 , 22 , 33 , 44 , 55 , 66 , 77 , 88 , 99 10 , 20 , 30 , 40 , 50 , 60 , 70 , 80 , 90"},  
+        { name:  "چهارمحال و بختیاری ۷۱ ، ۸۱" ,  eng: "Chahar-Mahaal-Bakhtiari 71 , 81"},  
+        { name:  "خراسان جنوبی ۱۲ ، ۳۲ ، ۴۲ ، ۵۲" ,  eng: "Khorasan 12 , 32 , 42 , 52"},  
+        { name:  "خوزستان ۱۴ ، ۲۴ ، ۳۴" ,  eng: "Khuzestan 14 , 24 , 34"},  
+        { name:  "زنجان ۸۷ ، ۹۷" ,  eng: "Zanjan 87 , 97"},  
+        { name:  "سمنان ۸۶ ، ۹۶" ,  eng: "Semnan 86 , 96"},  
+        { name:  "سیستان و بلوچستان ۸۵ ، ۹۵" ,  eng: "Sistan-Baluchestan 85 , 95"},  
+        { name:  "فارس ۶۳ ، ۷۳ ، ۸۳ ، ۹۳" ,  eng: "Fars 63 , 73 , 83 , 93"},  
+        { name:  "قزوین ۷۹ ، ۸۹" ,  eng: "Qazvin 79 , 89"},  
+        { name:  "قم ۱۶ ، ۲۶ ، ۳۶" ,  eng: "Qom 16 , 26 , 36"},  
+        { name:  "کردستان ۵۱ ، ۶۱" ,  eng: "Kurdistan 51 , 61"} ,  
+        { name:  "کرمان ۴۵ ، ۶۵ ، ۷۵" ,  eng: "Kerman 45 , 65 , 75"},  
+        { name:  "کرمانشاه ۱۹ ، ۲۹ ، ۳۹" ,  eng: "Kermanshah 19 , 29 , 39"},  
+        { name:  "کهگیلویه و بویراحمد ۴۹" ,  eng: "Kohgiluyeh-Boyer-Ahmad 49"},  
+        { name:  "گلستان ۵۹ ، ۶۹" ,  eng: "Golestan 59 , 69"},  
+        { name:  "گیلان ۴۶ ، ۵۶ ، ۷۶" ,  eng: "Gilan 46 , 56 , 76"},  
+        { name:  "لرستان ۳۱ ، ۴۱" ,  eng: "Lorestan 31 , 41"},  
+        { name:  "مازندران ۶۲ ، ۷۲ ، ۸۲ ، ۹۲" ,  eng: "Mazandaran 62 , 72 , 82 , 92"},  
+        { name:  "مرکزی ۴۷ ، ۵۷ ، ۶۷" ,  eng: "Markazi 47 , 57 , 67"},  
+        { name:  "هرمزگان ۸۴ ، ۹۴" ,  eng: "Hormozgan 84 , 94"},  
+        { name:  "همدان ۱۸ ، ۲۸ ، ۳۸" ,  eng: "Hamadan 18 , 28 , 38"},  
+        { name:  "یزد ۵۴ ، ۶۴ ، ۷۴" ,  eng: "Yazd 54 , 64 , 74"}
+
 
     ];
     var codes = [
@@ -333,11 +336,17 @@ app.factory("CodeSrv",function(){
 
     return {
         getCodes : function(){
-            return codes.concat(mobileCodes).concat(countryCodes);
+            return codes;
         },
         getPlates : function(){
             return plates;
-        }
+        },
+        getCountryCodes : function(){
+            return countryCodes;
+        },
+        getMobileCodes : function(){
+        return mobileCodes;
+    }
 
 
     }
