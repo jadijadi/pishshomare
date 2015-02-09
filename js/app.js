@@ -276,7 +276,7 @@ app.factory("CodeSrv",function(){
       { name:"ونزوئلا ۰۰۵۸", eng: "Venezuela 0058"},
       { name:"ویتنام ۰۰۸۴", eng: "Vietnam 0084"},
       { name:"والیس و فوتونا ۰۰۶۸۱", eng: "Wallis and Futuna 00681"},
-      { name:"بانک غرب ۰۰۹۷۰", eng: "West Bank 00970"},
+      { name:"کرانه باختری رود اردن ۰۰۹۷۰", eng: "West Bank 00970"},
       { name:"یمن ۰۰۹۶۷", eng: "Yemen 00967"},
       { name:"زامبیا ۰۰۲۶۰", eng: "Zambia 00260"},
       { name:"زیمباوه ۰۰۲۶۳", eng: "Zimbabwe 00263"}
