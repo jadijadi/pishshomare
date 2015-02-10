@@ -1,49 +1,57 @@
-var app = angular.module("MyApp",['ngAnimate']);
 
-app.controller("MyCtrl", ['$scope','CodeSrv',function($scope,CodeSrv) {
-    $scope.friends = CodeSrv.getCodes();
-    $scope.plates = CodeSrv.getPlates();
+var app = angular.module("MyApp",['ngRoute','ngAnimate']);
+
+app.config(['$routeProvider',
+  function($routeProvider) {
+    $routeProvider.
+      when('/estates', {
+        templateUrl: 'partials/estate-codes.html',
+        controller: 'EstateCodesCtrl'
+      }).
+      when('/countries', {
+        templateUrl: 'partials/country-codes.html',
+        controller: 'CountryCodesCtrl'
+      }).
+      when('/plates', {
+        templateUrl: 'partials/plates.html',
+        controller: 'PlatesCtrl'
+      }).
+      otherwise({
+        redirectTo: '/estates'
+      });
+  }]);
+
+app.controller("MainCtrl",['$scope', function($scope) {
+    $scope.$on('$routeChangeStart', function(event,next, current) { 
+       path = next.originalPath;
+       href = "#"+path;
+       $('.active').removeClass('active');
+       $("ul.navbar-right li a[href$='"+href+"']").parent('li').addClass('active');
+       setTimeout(function(){ $('#query').focus();}, 1000);
+
+
+    });
     $scope.filterFunction = function(element) {
-        return element.name.match(/^Ma/) ? true : false;
-    };
-
+            return element.name.match(/^Ma/) ? true : false;
+        }
 }]);
 
+app.controller("EstateCodesCtrl",['$scope','CodeSrv', function($scope,CodeSrv) {
+    $scope.estateCodes = CodeSrv.getEstateCodes();    
+}]);
+
+app.controller("CountryCodesCtrl",['$scope','CodeSrv', function($scope,CodeSrv) {
+    $scope.countryCodes = CodeSrv.getCountryCodes();
+}]);
+
+app.controller("PlatesCtrl",['$scope','CodeSrv', function($scope,CodeSrv) {
+    $scope.plates = CodeSrv.getPlates();  
+    
+}]);
 
 app.factory("CodeSrv",function(){
-    var plates = [
-        { name:  "آذربایجان شرقی ۱۵،۲۵،۳۵", eng: "Azerbaijan East 15,25,35"}, 
-        { name:  "آذربایجان غربی ۱۷،۲۷،۳۷", eng: "Azerbaijan West 17,27,37"}, 
-        { name:  "اردبیل ۹۱", eng: "Ardabil 91"}, 
-        { name:  "اصفهان ۱۳،۲۳،۴۳،۵۳", eng: "Isfahan 13,23,43,53"}, 
-        { name:  "البرز ۲۱،۶۸،۷۸", eng: "Alborz 21,68,78"}, 
-        { name:  "ایلام ۹۸", eng: "Ilam 98"}, 
-        { name:  "بوشهر ۴۸،۵۸", eng: "Bushehr 48,58"}, 
-        { name:  "تهران ۱۱،۲۲،۳۳،۴۴،۵۵،۶۶،۷۷،۸۸،۹۹،۱۰،۲۰،۳۰،۴۰،۵۰،۶۰،۷۰،۸۰،۹۰", eng: "Tehran 11,22,33,44,55,66,77,88,99,10,20,30,40,50,60,70,80,90"}, 
-        { name:  "چهارمحال و بختیاری ۷۱،۸۱", eng: "Chahar-Mahaal-Bakhtiari 71,81"}, 
-        { name:  "خراسان جنوبی ۱۲،۳۲،۴۲،۵۲", eng: "Khorasan 12,32,42,52"}, 
-        { name:  "خوزستان ۱۴،۲۴،۳۴", eng: "Khuzestan 14,24,34"}, 
-        { name:  "زنجان ۸۷،۹۷", eng: "Zanjan 87,97"}, 
-        { name:  "سمنان ۸۶،۹۶", eng: "Semnan 86,96"}, 
-        { name:  "سیستان و بلوچستان ۸۵،۹۵", eng: "Sistan-Baluchestan 85,95"}, 
-        { name:  "فارس ۶۳،۷۳،۸۳،۹۳", eng: "Fars 63,73,83,93"}, 
-        { name:  "قزوین ۷۹،۸۹", eng: "Qazvin 79,89"}, 
-        { name:  "قم ۱۶،۲۶،۳۶", eng: "Qom 16,26,36"}, 
-        { name:  "کردستان ۵۱،۶۱", eng: "Kurdistan 51,61"}, 
-        { name:  "کرمان ۴۵،۶۵،۷۵", eng: "Kerman 45,65,75"}, 
-        { name:  "کرمانشاه ۱۹،۲۹،۳۹", eng: "Kermanshah 19,29,39"}, 
-        { name:  "کهگیلویه و بویراحمد ۴۹", eng: "Kohgiluyeh-Boyer-Ahmad 49"}, 
-        { name:  "گلستان ۵۹،۶۹", eng: "Golestan 59,69"}, 
-        { name:  "گیلان ۴۶،۵۶،۷۶", eng: "Gilan 46,56,76"}, 
-        { name:  "لرستان ۳۱،۴۱", eng: "Lorestan 31,41"}, 
-        { name:  "مازندران ۶۲،۷۲،۸۲،۹۲", eng: "Mazandaran 62,72,82,92"}, 
-        { name:  "مرکزی ۴۷،۵۷،۶۷", eng: "Markazi 47,57,67"}, 
-        { name:  "هرمزگان ۸۴،۹۴", eng: "Hormozgan 84,94"}, 
-        { name:  "همدان ۱۸،۲۸،۳۸", eng: "Hamadan 18,28,38"}, 
-        { name:  "یزد ۵۴،۶۴،۷۴", eng: "Yazd 54,64,74"}
 
-    ];
-    var codes = [
+    var estateCodes = [
         { name:  "آذربایجان شرقی ۰۴۱", eng: "Azerbaijan East 041"}, 
         { name:  "آذربایجان غربی ۰۴۴", eng: "Azerbaijan West 044"}, 
         { name:  "اردبیل ۰۴۵", eng: "Ardabil 045"}, 
@@ -177,7 +185,7 @@ app.factory("CodeSrv",function(){
       { name:"عراق ۰۰۹۶۴", eng: "Iraq 00964"},
       { name:"ایرلند ۰۰۳۵۳", eng: "Ireland 00353"},
       { name:"جزیره من ۰۰۴۴", eng: "Isle of Man 0044"},
-      { name:"اسرائیل ۰۰۹۷۲", eng: "Israel 00972"},
+      { name:"اسرلئیل ۰۰۹۷۲", eng: "Israel 00972"},
       { name:"ایتالیا ۰۰۳۹", eng: "Italy 0039"},
       { name:"ساحل عاج ۰۰۲۲۵", eng: "Ivory Coast 00225"},
       { name:"جامايیکا  ۰۰۱۸۷۶", eng: "Jamaica 001876"},
@@ -307,39 +315,73 @@ app.factory("CodeSrv",function(){
       { name:"ونزوئلا ۰۰۵۸", eng: "Venezuela 0058"},
       { name:"ویتنام ۰۰۸۴", eng: "Vietnam 0084"},
       { name:"والیس و فوتونا ۰۰۶۸۱", eng: "Wallis and Futuna 00681"},
-      { name:"کرانه باختری رود اردن ۰۰۹۷۰", eng: "West Bank 00970"},
+      { name:"بانک غرب ۰۰۹۷۰", eng: "West Bank 00970"},
       { name:"یمن ۰۰۹۶۷", eng: "Yemen 00967"},
       { name:"زامبیا ۰۰۲۶۰", eng: "Zambia 00260"},
       { name:"زیمباوه ۰۰۲۶۳", eng: "Zimbabwe 00263"}
     ];
 
     var mobileCodes = [
-        {name: "۰۹۱۱ همراه اول استان گلستان، گیلان، مازندران", eng: "0911"},
-        {name: "۰۹۱۲ همراه اول استان تهران، البرز، زنجان، سمنان، قزوین، قم", eng: "0912"},
-        {name: "۰۹۱۳ همراه اول استان اصفهان، کرمان، یزد، چهارمحال و بختیاری", eng: "0913"},
-        {name: "۰۹۱۴ همراه اول استان آذربایجان شرقی، غربی، اردبیل", eng: "0914"},
-        {name: "۰۹۱۵ همراه اول استان خراسان شمالی، رضوی، جنوبی، سیستان و بلوچستان", eng: "0915"},
-        {name: "۰۹۱۶ همراه اول استان خوزستان، لرستان", eng: "0916"},
-        {name: "۰۹۱۷ همراه اول استان فارس، کهگیلویه و بویر احمد، هرمزگان، بوشهر", eng: "0917"},
-        {name: "۰۹۱۸ همراه اول استان همدان، ایلام، مرکزی، کردستان، کرمانشاه", eng: "0918"},
-        {name: "تالیا ۰۹۳۲", eng: "Taliya 0932"},
-        {name: "۰۹۳۱ اسپادان", eng: "Spadan 0931"},
-        {name: "۰۹۳۴ شبکه مستقل تلفن همراه کیش", eng: "TKC 0934"},
-        {name: "۰۹۱۰ ، ۰۹۱۹ اپراتور اول ، همراه اول", eng: "0910 0919 MCI"},
-        {name: "۰۹۰۱ ، ۰۹۰۲ ، ۰۹۳۰ ، ۰۹۳۳ ، ۰۹۳۵ ، ۰۹۳۶ ، ۰۹۳۷ ، ۰۹۳۸ ، ۰۹۳۹ ایرانسل", eng: "Irancell 0901 0902 0930 0933 0935 0936 0937 0938 0939"},
-        {name: "۰۹۲۰ ، ۰۹۲۱ رایتل ، تامین تلکام", eng: "0920, 0921 Rightel"}
+
+    	{name: "۰۹۱۱ همراه اول استان گلستان، گیلان، مازندران", eng: "0911"},
+    	{name: "۰۹۱۲ همراه اول استان تهران، البرز، زنجان، سمنان، قزوین، قم", eng: "0912"},
+    	{name: "۰۹۱۳ همراه اول استان اصفهان، کرمان، یزد، چهارمحال و بختیاری", eng: "0913"},
+    	{name: "۰۹۱۴ همراه اول استان آذربایجان شرقی، غربی، اردبیل", eng: "0914"},
+    	{name: "۰۹۱۵ همراه اول استان خراسان شمالی، رضوی، جنوبی، سیستان و بلوچستان", eng: "0915"},
+    	{name: "۰۹۱۶ همراه اول استان خوزستان، لرستان", eng: "0916"},
+    	{name: "۰۹۱۷ همراه اول استان فارس، کهگیلویه و بویر احمد، هرمزگان، بوشهر", eng: "0917"},
+    	{name: "۰۹۱۸ همراه اول استان همدان، ایلام، مرکزی، کردستان، کرمانشاه", eng: "0918"},
+    	{name: "تالیا ۰۹۳۲", eng: "Taliya 0932"},
+    	{name: "۰۹۳۱ اسپادان", eng: "Spadan 0931"},
+    	{name: "۰۹۳۴ شبکه مستقل تلفن همراه کیش", eng: "TKC 0934"},
+    	{name: "۰۹۱۰ ، ۰۹۱۹ اپراتور اول ، همراه اول", eng: "0910 0919 MCI"},
+    	{name: "۰۹۰۱ ، ۰۹۰۲ ، ۰۹۳۰ ، ۰۹۳۳ ، ۰۹۳۵ ، ۰۹۳۶ ، ۰۹۳۷ ، ۰۹۳۸ ، ۰۹۳۹ ایرانسل", eng: "Irancell 0901 0902 0930 0933 0935 0936 0937 0938 0939"},
+    	{name: "۰۹۲۰ ، ۰۹۲۱ رایتل ، تامین تلکام", eng: "0920, 0921 Rightel"}
+   ];
+
+   var plates = [
+        { name:  "آذربایجان شرقی ۱۵،۲۵،۳۵", eng: "Azerbaijan East 15,25,35"}, 
+        { name:  "آذربایجان غربی ۱۷،۲۷،۳۷", eng: "Azerbaijan West 17,27,37"}, 
+        { name:  "اردبیل ۹۱", eng: "Ardabil 91"}, 
+        { name:  "اصفهان ۱۳،۲۳،۴۳،۵۳", eng: "Isfahan 13,23,43,53"}, 
+        { name:  "البرز ۲۱،۶۸،۷۸", eng: "Alborz 21,68,78"}, 
+        { name:  "ایلام ۹۸", eng: "Ilam 98"}, 
+        { name:  "بوشهر ۴۸،۵۸", eng: "Bushehr 48,58"}, 
+        { name:  "تهران ۱۱،۲۲،۳۳،۴۴،۵۵،۶۶،۷۷،۸۸،۹۹،۱۰،۲۰،۳۰،۴۰،۵۰،۶۰،۷۰،۸۰،۹۰", eng: "Tehran 11,22,33,44,55,66,77,88,99,10,20,30,40,50,60,70,80,90"}, 
+        { name:  "چهارمحال و بختیاری ۷۱،۸۱", eng: "Chahar-Mahaal-Bakhtiari 71,81"}, 
+        { name:  "خراسان جنوبی ۱۲،۳۲،۴۲،۵۲", eng: "Khorasan 12,32,42,52"}, 
+        { name:  "خوزستان ۱۴،۲۴،۳۴", eng: "Khuzestan 14,24,34"}, 
+        { name:  "زنجان ۸۷،۹۷", eng: "Zanjan 87,97"}, 
+        { name:  "سمنان ۸۶،۹۶", eng: "Semnan 86,96"}, 
+        { name:  "سیستان و بلوچستان ۸۵،۹۵", eng: "Sistan-Baluchestan 85,95"}, 
+        { name:  "فارس ۶۳،۷۳،۸۳،۹۳", eng: "Fars 63,73,83,93"}, 
+        { name:  "قزوین ۷۹،۸۹", eng: "Qazvin 79,89"}, 
+        { name:  "قم ۱۶،۲۶،۳۶", eng: "Qom 16,26,36"}, 
+        { name:  "کردستان ۵۱،۶۱", eng: "Kurdistan 51,61"}, 
+        { name:  "کرمان ۴۵،۶۵،۷۵", eng: "Kerman 45,65,75"}, 
+        { name:  "کرمانشاه ۱۹،۲۹،۳۹", eng: "Kermanshah 19,29,39"}, 
+        { name:  "کهگیلویه و بویراحمد ۴۹", eng: "Kohgiluyeh-Boyer-Ahmad 49"}, 
+        { name:  "گلستان ۵۹،۶۹", eng: "Golestan 59,69"}, 
+        { name:  "گیلان ۴۶،۵۶،۷۶", eng: "Gilan 46,56,76"}, 
+        { name:  "لرستان ۳۱،۴۱", eng: "Lorestan 31,41"}, 
+        { name:  "مازندران ۶۲،۷۲،۸۲،۹۲", eng: "Mazandaran 62,72,82,92"}, 
+        { name:  "مرکزی ۴۷،۵۷،۶۷", eng: "Markazi 47,57,67"}, 
+        { name:  "هرمزگان ۸۴،۹۴", eng: "Hormozgan 84,94"}, 
+        { name:  "همدان ۱۸،۲۸،۳۸", eng: "Hamadan 18,28,38"}, 
+        { name:  "یزد ۵۴،۶۴،۷۴", eng: "Yazd 54,64,74"}
     ];
 
 
     return {
-        getCodes : function(){
-            return codes.concat(mobileCodes).concat(countryCodes);
+        getEstateCodes : function(){
+            return estateCodes.concat(mobileCodes);
+        },
+        getCountryCodes : function(){
+            return countryCodes;
         },
         getPlates : function(){
             return plates;
         }
-
-
     }
 
 });
