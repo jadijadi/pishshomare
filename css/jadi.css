@@ -7,7 +7,8 @@
 body {
 	text-align: center;
 	font-size: 16px;
-	padding-bottom: 6.25em;
+	padding-bottom: 5em;
+	background: url(../images/patern.png) #E8E8E8 !important;
 }
 
 body .header .well{
@@ -17,12 +18,27 @@ body .header .well{
 	margin-bottom: 0;
 	border-radius: 0;
 	border: 0;
-
-
 }
 
-body input {
+body .header .navbar {
+	margin: 0;
+}
+
+body .content .search-box{
+	border : solid #262626;
+	border-width: 0 .1em 0 .1em;
+	box-shadow: 0 0.4em .5em #404040;
+	min-height: 50em;
+	background: white;
+}
+
+body .content .search-box input {
+	margin-top: 1em;
 	line-height: 2em !important;
+}
+
+body .content .search-box table {
+	font-size: 1.4em;
 }
 
 body .footer {
@@ -47,10 +63,6 @@ body .footer .well p {
 	line-height: 1.5em;
 }
 
-table {
-	font-size: 1.7em;
-}
-
 .ng-enter, .ng-move{
 	-webkit-animation: fadeIn 0.5s;
 	-moz-animation: fadeIn 0.5s;
@@ -69,10 +81,28 @@ table {
 	text-align:center;
 }
 
-@media (max-width: 767px){
+
+@media (max-width: 980px){
 	.header h2{
-		font-size: 1em;
+		font-size: 1.5em;
 		margin: 0;
 		line-height: 1.5;
+	}
+
+	body .content .search-box table{
+		font-size: 1em;
+	}
+}
+
+@media (max-width: 767px){
+	.header h2{
+		font-size: 1.3em;
+		margin: 0;
+		line-height: 1.5;
+
+	}
+	body .content .search-box {
+		max-width: 30em;
+		margin: auto;
 	}
 }
