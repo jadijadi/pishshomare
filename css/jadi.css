@@ -7,7 +7,8 @@
 body {
 	text-align: center;
 	font-size: 16px;
-	padding-bottom: 6.25em;
+	padding-bottom: 5em;
+	background: url(../images/patern.png) #E8E8E8 !important;
 }
 
 body .header .well{
@@ -19,7 +20,20 @@ body .header .well{
 	border: 0;
 }
 
+body .header .navbar {
+	margin: 0;
+}
+
+body .content .search-box{
+	border : solid #262626;
+	border-width: 0 .1em 0 .1em;
+	box-shadow: 0 0.4em .5em #404040;
+	min-height: 50em;
+	background: white;
+}
+
 body .content .search-box input {
+	margin-top: 1em;
 	line-height: 2em !important;
 }
 

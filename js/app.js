@@ -26,7 +26,7 @@ app.controller("MainCtrl",['$scope', function($scope) {
        path = next.originalPath;
        href = "#"+path;
        $('.active').removeClass('active');
-       $("ul.navbar-right li a[href$='"+href+"']").parent('li').addClass('active');
+       $("ul.navbar-nav li a[href$='"+href+"']").parent('li').addClass('active');
        setTimeout(function(){ $('#query').focus();}, 1000);
 
 
