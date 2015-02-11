@@ -5,7 +5,7 @@
 	  	</div>
 	</form>
 
-	<table class="table table-striped">
+	<table class="table table-striped col-xs-12">
 		<tr  ng-repeat="plate in plates | filter: query | orderBy: 'name' ">
 			<td>{{plate.name}}<div class=eng>{{plate.eng}}</div></td>
 	    </tr>
