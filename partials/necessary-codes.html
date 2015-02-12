@@ -1,0 +1,15 @@
+
+<div >     
+    <form class="form-horizontal col-xs-12">
+        <div class="form-group form-group-lg">
+            <input  class="form-control " id="query" ng-model="query" type="text" placeholder="شماره‌های ضروری" autofocus>
+        </div>
+    </form>
+
+    <table class="table table-striped col-xs-12">
+        <tr  ng-repeat="necessaryCode in necessaryCodes | filter: query | orderBy: 'name' ">
+            <td>{{necessaryCode.name}}<div class=eng>{{necessaryCode.eng}}</div></td>
+        </tr>
+    </table>
+
+</div>

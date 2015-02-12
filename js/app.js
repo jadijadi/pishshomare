@@ -12,6 +12,10 @@ app.config(['$routeProvider',
         templateUrl: 'partials/country-codes.html',
         controller: 'CountryCodesCtrl'
       }).
+      when('/necessary', {
+            templateUrl: 'partials/necessary-codes.html',
+            controller: 'NecessaryCodesCtrl'
+      }).
       when('/plates', {
         templateUrl: 'partials/plates.html',
         controller: 'PlatesCtrl'
@@ -40,6 +44,9 @@ app.controller("MainCtrl",['$scope', function($scope) {
 app.controller("EstateCodesCtrl",['$scope','CodeSrv', function($scope,CodeSrv) {
     $scope.estateCodes = CodeSrv.getEstateCodes();    
 }]);
+app.controller("NecessaryCodesCtrl",['$scope','CodeSrv', function($scope,CodeSrv) {
+    $scope.necessaryCodes = CodeSrv.getNecessary();    
+}]);
 
 app.controller("CountryCodesCtrl",['$scope','CodeSrv', function($scope,CodeSrv) {
     $scope.countryCodes = CodeSrv.getCountryCodes();
@@ -51,7 +58,69 @@ app.controller("PlatesCtrl",['$scope','CodeSrv', function($scope,CodeSrv) {
 }]);
 
 app.factory("CodeSrv",function(){
-
+    var necessary = [
+        {name: "خرابی تلفن ۱۷", eng:"17"},
+        {name: "فوریتهای پلیسی ۱۱۰", eng:"110"},
+        {name: "۱۱۳ ستاد خبری وزارت اطلاعات", eng:"113"},
+        {name: "اورژانس تهران ۱۱۵", eng:"115"},
+        {name: "حفاظت نیروی انتظامی ۱۱۶", eng:"116"},
+        {name: "اطلاعات تلفنی ۱۱۸", eng:"118"},
+        {name: "ساعت گویا ۱۱۹", eng:"119"},
+        {name: "شركت آب و فاضلاب ۱۲۲", eng:"122"},
+        {name: "اورژانس اجتماعی ۱۲۳", eng:"123"},
+        {name: "سازمان بازرسی ونظارت برتوزیع كالا ۱۲۳", eng:"124"},
+        {name: "آتش‌نشانی ۱۲۵", eng:"125"},
+        {name: "رزرو تلفن بین شهری ۱۲۶", eng:"126"},
+        {name: "خرابی تلکس ۱۲۷", eng:"127"},
+        {name: "قوه قضائیه ۱۲۹", eng:"129"},
+        {name: "تاکسی تلفنی ۱۳۳", eng:"133"},
+        {name: "سازمان هواشناسی ۱۳۴", eng:"134"},
+        {name: "۱۳۶ سازمان بازرسی كل كشور", eng:"136"},
+        {name: "شهرداری تهران ۱۳۷", eng:"137"},
+        {name: "وزارت کشور ۱۳۸", eng:"138"},
+        {name: "شرکت قطارهای مسافری رجا ۱۳۹", eng:"139"},
+        {name: "شركت پست ( اعلام كد پستی ) ۱۴۰", eng:"140"},
+        {name: "وزارت راه و ترابری ۱۴۱", eng:"141"},
+        {name: "سازمان تامین اجتماعی ۱۴۲", eng:"142"},
+        {name: "اداره کل بیمه خدمات درمانی ۱۴۳", eng:"143"},
+        {name: "ندای قرآن ۱۴۴", eng:"144"},
+        {name: "۱۴۷ ندای امداد جمعيت هلال احمر", eng:"147"},
+        {name: "ندای مشاور بهزیستی ۱۴۸", eng:"148"},
+        {name: "ندای بهشت ۱۴۹", eng:"149"},
+        {name: "سازمان صدا و سيما (ارتباطات مردمی) ۱۶۲", eng:"162"},
+        {name: "سازمان فنی و حرفه ای ۱۶۷", eng:"167"},
+        {name: "۱۹۰ واحد ارتباطات مردمی شركت مخابرات استان تهران", eng:"190"},
+        {name: "اعلام داروخانه هاي شبانه روزی ۱۹۱", eng:"191"},
+        {name: "اعلام تقويم و اوقات شرعی ۱۹۲", eng:"192"},
+        {name: "پست تلفنی ۱۹۳", eng:"193"},
+        {name: "شركت گاز (حوادث گاز) ۱۹۴", eng:"194"},
+        {name: "رزرو تلفن بين الملل ۱۹۵", eng:"195"},
+        {name: "۱۹۶ دریافت پیشنهادات و انتقادات کدهای ۱۱۸-۱۲۶ - ۱۹۵ و دفاتر بهره برداری", eng:"196"},
+        {name: " ۱۹۷ نظارت همگانی فرماندهی ناجا", eng:"197"},
+        {name: "۱۹۹ هواپيمایی جمهوری اسلامی ايران", eng:"199"},
+        {name: "۰۹۹۹۰ پاسخگویی تلفن همراه", eng:"09990"},
+        {name: "۶۱۳۳ دفتر رياست جمهوری  (ارتباطات مردمی)", eng:"6133"},
+        {name: "۲۲۱۶۰ سازمان صدا وسيمای جمهوری اسلامی ايران", eng:"22160"},
+        {name: "۲۳۸۱۹ شرکت برق منطقه تهران", eng:"23819"},
+        {name: "۳۸۵۸۱ دادستانی کل کشور", eng:"38581"},
+        {name: "مجلس شورای اسلامی ۳۹۹۳۱", eng:"39931"},
+        {name: "۳۹۹۷۱ شرکت توزیع نیروی برق", eng:"39971"},
+        {name: "۵۱۰۰۱ فرودگاه بین المللی امام خمینی (ره)", eng:"51001"},
+        {name: "۵۵۱۲۱ شركت راه آهن", eng:"55121"},
+        {name: "دفتر مقام رهبری ۶۴۴۱۱", eng:"64411"},
+        {name: "دفتر ریاست جمهوری ۶۴۴۵۱", eng:"64451"},
+        {name: "۶۴۵۱۱-۲ سازمان حج و زيارت", eng:"64511-2"},
+        {name: "سازمان آب ۶۶۱۷۱", eng:"66171"},
+        {name: "۹۱۱۳۳۳۳ هواپیمایی جمهوری اسلامی ایران", eng:"9113333"},
+        {name: "۳۳۱۱۱۰۴۴ شکایات ارتباطات بین الملل", eng:"33111044"},
+        {name: "۶۰۹۹۲۸۲۸ اعلام ارز گـويا", eng:""},
+        {name: "۶۶۹۳۹۵۹۵ اداره گذرنامه", eng:"66939595"},
+        {name: "۸۸۰۵۱۰۱۱ سازمان آتش نشانی", eng:"88051011"},
+        {name: "۸۸۷۷۶۰۲۸ مرکز اطلاع رسانی داروها و سموم دانشکده داروسازی", eng:"88776028"},
+        {name: "۸۸۷۴۰۱۶۳-۵ تلفن گویای مترو", eng:"88740163-5"},
+        {name: "۸۸۹۰۰۸۸۹ وزارت بازرگانی", eng:"88900889"}        
+       
+    ];
     var estateCodes = [
         { name:  "آذربایجان شرقی ۰۴۱", eng: "Azerbaijan East 041"}, 
         { name:  "آذربایجان غربی ۰۴۴", eng: "Azerbaijan West 044"}, 
@@ -404,6 +473,9 @@ app.factory("CodeSrv",function(){
         },
         getPlates : function(){
             return plates;
+        },
+        getNecessary : function(){
+        return necessary;
         }
     }
 
