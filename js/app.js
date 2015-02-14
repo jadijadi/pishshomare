@@ -1,19 +1,20 @@
 
 var app = angular.module("MyApp",['ngRoute','ngAnimate']);
 
+var __main_template = 'partials/main-template.html';
 app.config(['$routeProvider',
   function($routeProvider) {
     $routeProvider.
       when('/estates', {
-        templateUrl: 'partials/estate-codes.html',
+        templateUrl: __main_template,
         controller: 'EstateCodesCtrl'
       }).
       when('/countries', {
-        templateUrl: 'partials/country-codes.html',
+        templateUrl: __main_template,
         controller: 'CountryCodesCtrl'
       }).
       when('/plates', {
-        templateUrl: 'partials/plates.html',
+        templateUrl: __main_template,
         controller: 'PlatesCtrl'
       }).
       otherwise({
@@ -22,32 +23,29 @@ app.config(['$routeProvider',
   }]);
 
 app.controller("MainCtrl",['$scope', function($scope) {
-  $scope.w ="hh";
     $scope.$on('$routeChangeStart', function(event,next, current) { 
        path = next.originalPath;
        href = "#"+path;
        $('.active').removeClass('active');
        $("ul.navbar-nav li a[href$='"+href+"']").parent('li').addClass('active');
        setTimeout(function(){ $('#query').focus();}, 1000);
-
-
     });
-    $scope.filterFunction = function(element) {
-            return element.name.match(/^Ma/) ? true : false;
-        }
+   
 }]);
 
 app.controller("EstateCodesCtrl",['$scope','CodeSrv', function($scope,CodeSrv) {
-    $scope.estateCodes = CodeSrv.getEstateCodes();    
+    $scope.codes = CodeSrv.getEstateCodes();
+    $scope.placeholder = "پیش شماره یا نام استان یا سرویس دهنده";
 }]);
 
 app.controller("CountryCodesCtrl",['$scope','CodeSrv', function($scope,CodeSrv) {
-    $scope.countryCodes = CodeSrv.getCountryCodes();
+    $scope.codes = CodeSrv.getCountryCodes();
+    $scope.placeholder = "پیش شماره یا نام کشور";
 }]);
 
 app.controller("PlatesCtrl",['$scope','CodeSrv', function($scope,CodeSrv) {
-    $scope.plates = CodeSrv.getPlates();  
-    
+    $scope.codes = CodeSrv.getPlates();  
+    $scope.placeholder = "شماره پلاک یا نام استان";
 }]);
 
 app.factory("CodeSrv",function(){
