@@ -30,6 +30,7 @@ body .content .search-box{
 	box-shadow: 0 0.4em .5em #404040;
 	min-height: 50em;
 	background: white;
+	overflow: auto;
 }
 
 body .content .search-box input {
