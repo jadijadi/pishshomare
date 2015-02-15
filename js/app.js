@@ -394,7 +394,18 @@ app.factory("CodeSrv",function(){
         { name:  "همدان ۱۸،۲۸،۳۸", eng: "Hamadan 18,28,38"}, 
         { name:  "یزد ۵۴،۶۴،۷۴", eng: "Yazd 54,64,74"}
     ];
+    var __all = [estateCodes,countryCodes,mobileCodes,plates];
+    var __addkeymapping = function(){
+	    for (var i = 0, len = __all.length; i < len; i++){
+		var __arr = __all[i];
+		for (var j = 0; j< __arr.length; j++){
+			var code = __arr[j];
+ 			code.keymap = mapper.farsi_mapper(code.name);
+		}
+	    }
 
+    }
+    __addkeymapping();
     return {
         getEstateCodes : function(){
             return estateCodes.concat(mobileCodes);
