@@ -267,7 +267,7 @@ app.factory("CodeSrv",function(){
       { name:"کره شمالی ۰۰۸۵۰", eng: "North Korea 00850"},
       { name:"جزایر ماریانای شمالی  ۰۰۱۶۷۰", eng: "Northern Mariana Islands 001670"},
       { name:"نروژ ۰۰۴۷", eng: "Norway 0047"},
-      { name:"عمان ۰۰۹۸۶", eng: "Oman 00968"},
+      { name:"عمان ۰۰۹۶۸", eng: "Oman 00968"},
       { name:"پاکستان ۰۰۹۲", eng: "Pakistan 0092"},
       { name:"پالائو ۰۰۶۸۰", eng: "Palau 00680"},
       { name:"پاناما ۰۰۵۰۷", eng: "Panama 00507"},
