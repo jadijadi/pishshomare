@@ -571,7 +571,7 @@ app.factory("CodeSrv",function(){
         { name:  "ایلام ۹۸", eng: "Ilam 98"}, 
         { name:  "بوشهر ۴۸،۵۸", eng: "Bushehr 48,58"}, 
         { name:  "تهران ۱۱،۲۲،۳۳،۴۴،۵۵،۶۶،۷۷،۸۸،۹۹،۱۰،۲۰،۳۰،۴۰،۵۰،۶۰،۷۰،۸۰،۹۰", eng: "Tehran 11,22,33,44,55,66,77,88,99,10,20,30,40,50,60,70,80,90"}, 
-	{ name:  "توابع استان تهران ۲۱, ۷۸", eng: "Counties of Tehran 78, 21"}
+	{ name:  "توابع استان تهران ۲۱,۷۸", eng: "Counties of Tehran 78,21"}
         { name:  "چهارمحال و بختیاری ۷۱،۸۱", eng: "Chahar-Mahaal-Bakhtiari 71,81"}, 
         { name:  "خراسان جنوبی ۱۲،۳۲،۴۲،۵۲", eng: "Khorasan 12,32,42,52"}, 
         { name:  "خوزستان ۱۴،۲۴،۳۴", eng: "Khuzestan 14,24,34"}, 
