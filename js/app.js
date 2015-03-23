@@ -567,10 +567,11 @@ app.factory("CodeSrv",function(){
         { name:  "آذربایجان غربی ۱۷،۲۷،۳۷", eng: "Azerbaijan West 17,27,37"}, 
         { name:  "اردبیل ۹۱", eng: "Ardabil 91"}, 
         { name:  "اصفهان ۱۳،۲۳،۴۳،۵۳", eng: "Isfahan 13,23,43,53"}, 
-        { name:  "البرز ۲۱،۶۸،۷۸", eng: "Alborz 21,68,78"}, 
+        { name:  "اردبیل ۶۸", eng: "Alborz 21,68,78"}, 
         { name:  "ایلام ۹۸", eng: "Ilam 98"}, 
         { name:  "بوشهر ۴۸،۵۸", eng: "Bushehr 48,58"}, 
         { name:  "تهران ۱۱،۲۲،۳۳،۴۴،۵۵،۶۶،۷۷،۸۸،۹۹،۱۰،۲۰،۳۰،۴۰،۵۰،۶۰،۷۰،۸۰،۹۰", eng: "Tehran 11,22,33,44,55,66,77,88,99,10,20,30,40,50,60,70,80,90"}, 
+	{ name:  "توابع استان تهران ۲۱, ۷۸", eng: "Counties of Tehran 78, 21"}
         { name:  "چهارمحال و بختیاری ۷۱،۸۱", eng: "Chahar-Mahaal-Bakhtiari 71,81"}, 
         { name:  "خراسان جنوبی ۱۲،۳۲،۴۲،۵۲", eng: "Khorasan 12,32,42,52"}, 
         { name:  "خوزستان ۱۴،۲۴،۳۴", eng: "Khuzestan 14,24,34"}, 
