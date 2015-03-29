@@ -17,10 +17,14 @@ app.config(['$routeProvider',
             templateUrl: 'partials/necessary-codes.html',
             controller: 'NecessaryCodesCtrl'
       }).
-      when('/plates', {
-        templateUrl: __main_template,
-        controller: 'PlatesCtrl'
-      }).
+        when('/plates', {
+            templateUrl: __main_template,
+            controller: 'PlatesCtrl'
+        }).
+        when('/tehran', {
+            templateUrl: __main_template,
+            controller: 'TehranCodesCtrl'
+        }).
       otherwise({
         redirectTo: '/estates'
       });
@@ -53,8 +57,13 @@ app.controller("NecessaryCodesCtrl",['$scope','CodeSrv', function($scope,CodeSrv
 }]);
 
 app.controller("PlatesCtrl",['$scope','CodeSrv', function($scope,CodeSrv) {
-    $scope.codes = CodeSrv.getPlates();  
+    $scope.codes = CodeSrv.getPlates();
     $scope.placeholder = "شماره پلاک یا نام استان";
+}]);
+
+app.controller("TehranCodesCtrl",['$scope','CodeSrv', function($scope,CodeSrv) {
+    $scope.codes = CodeSrv.getTehranCodes()
+    $scope.placeholder = "پیش‌شماره‌های تهران";
 }]);
 
 app.factory("CodeSrv",function(){
@@ -594,7 +603,14 @@ app.factory("CodeSrv",function(){
         { name:  "یزد ۵۴،۶۴،۷۴", eng: "Yazd 54,64,74"}
     ];
 
-    var __all = [estateCodes,countryCodes,mobileCodes,plates,necessary];
+
+    var tehranCodes = [
+        { name:"افغانستان ۰۰۹۳", eng: "Afghanistan 0093"},
+        { name:"زیمباوه ۰۰۲۶۳", eng: "Zimbabwe 00263"}
+    ];
+
+
+    var __all = [estateCodes,countryCodes,mobileCodes,plates,necessary,tehranCodes];
     var __addkeymapping = function(){
 	    for (var i = 0, len = __all.length; i < len; i++){
 		var __arr = __all[i];
@@ -619,6 +635,9 @@ app.factory("CodeSrv",function(){
         },
         getNecessary : function(){
             return necessary;
+        },
+        getTehranCodes : function(){
+            return tehranCodes;
         }
     }
 
