@@ -7,7 +7,11 @@
 
 	<table class="table table-striped col-xs-12">
 		<tr  ng-repeat="tehranCode in tehranCode | filter: query | orderBy: 'name' ">
-			<td>{{tehranCode.name}}<div class=eng>{{tehranCode.eng}}</div></td>
+			<td>
+                {{tehranCode.name}}
+                <div class=eng>{{tehranCode.eng}}</div>
+                <label ng-repeat="areas in tehranCode.areas | filter: query | orderBy: 'name' " class=area>{{areas.name}}،&nbsp;</label>
+            </td>
 	    </tr>
 	</table>
 

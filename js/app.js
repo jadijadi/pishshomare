@@ -22,7 +22,7 @@ app.config(['$routeProvider',
             controller: 'PlatesCtrl'
         }).
         when('/tehran', {
-            templateUrl: __main_template,
+            templateUrl: 'partials/tehran.html',
             controller: 'TehranCodesCtrl'
         }).
       otherwise({
@@ -62,7 +62,7 @@ app.controller("PlatesCtrl",['$scope','CodeSrv', function($scope,CodeSrv) {
 }]);
 
 app.controller("TehranCodesCtrl",['$scope','CodeSrv', function($scope,CodeSrv) {
-    $scope.codes = CodeSrv.getTehranCodes()
+    $scope.tehranCode = CodeSrv.getTehranCodes()
     $scope.placeholder = "پیش‌شماره یا نام مرکز یا نام منطقه";
 }]);
 
