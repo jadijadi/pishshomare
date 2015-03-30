@@ -852,6 +852,7 @@ app.factory("CodeSrv",function(){
             areas : [{name:"میدان ولیعصر"},{name:"کریمخان"},{name:"نجات اللهی"},{name:"سمیه"},{name:"فلسطین"},{name:"زرتشت"},{name:"بهجت‌آباد"}]
         }
     ];
+    //tnx http://sazinco.ir/
 
 
     var __all = [estateCodes,countryCodes,mobileCodes,plates,necessary,tehranCodes];
