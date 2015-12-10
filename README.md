@@ -11,7 +11,7 @@ The Idea for this application came from [here](http://jadi.net/2015/02/%D9%88%D8
 * [JQuery][Jquery]
 * [Sticky.js](http://stickyjs.com)
 * [Particles.js](http://vincentgarreau.com/particles.js/)
-* 
+
 # پیش شماره
 
 پیش شماره یک اپلیکیشین ساده جستجوی کد های تلفن استان های ایران ، کد های کشور ها ، کد موبایل ها و همچنین پلاک ماشین هاست که از انگولار استفاده می کند
