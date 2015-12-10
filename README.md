@@ -4,6 +4,7 @@ Pishshomare is a simple AngularJs search application for Iran States, Countries 
 The Idea for this application came from [here](http://jadi.net/2015/02/%D9%88%D8%B6%D8%B9%DB%8C%D8%AA-%D8%A7%D8%B3%D9%81-%D8%A8%D8%A7%D8%B1-%D8%B3%D8%A7%DB%8C%D8%AA-%D9%87%D8%A7%DB%8C-%D8%AF%D9%88%D9%84%D8%AA%DB%8C-%D9%88-%D8%A8%DB%8C%DA%A9%D8%A7%D8%B1%DB%8C-%D8%A8%D9%87/ "Jadi's Blog Post")
 
 # Dependencies
+
 * [َAngularJS][AngularJS]
 * [Twitter Bootstrap][Bootstrap]
 * [Font-Awesome Icon Set][FontAwesome]
@@ -18,6 +19,7 @@ The Idea for this application came from [here](http://jadi.net/2015/02/%D9%88%D8
 می آید
 
 # وابستگی ها
+
 * [انگولار][AngularJS]
 * [بوتسترپ][Bootstrap]
 * [مجموعه آیکون فونت آسام][FontAwesome]
