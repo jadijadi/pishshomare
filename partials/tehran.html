@@ -1,18 +1,18 @@
-<div >     
+<div >
 	<form class="form-horizontal col-xs-12">
-		<div class="form-group form-group-lg">
-			<input  class="form-control " id="query" ng-model="query" type="text" placeholder="پیش شماره یا نام مناطق" autofocus>
-	  	</div>
+		<div class="form-group form-group-lg has-success">
+			<input  class="form-control " id="query inputSuccess" ng-model="query" type="text" placeholder="پیش شماره یا نام مناطق" autofocus>
+	  </div>
 	</form>
-
 	<table class="table table-striped col-xs-12">
 		<tr  ng-repeat="tehranCode in tehranCode | filter: query | orderBy: 'name' ">
 			<td>
-                {{tehranCode.name}}
-                <div class=eng>{{tehranCode.eng}}</div>
-                <label ng-repeat="areas in tehranCode.areas | filter: query | orderBy: 'name' " class=area>{{areas.name}}،&nbsp;</label>
-            </td>
-	    </tr>
+        {{tehranCode.name}}
+        <div class=eng>
+					{{tehranCode.eng}}
+				</div>
+        <label ng-repeat="areas in tehranCode.areas | filter: query | orderBy: 'name' " class=area>{{areas.name}}،&nbsp;</label>
+      </td>
+	  </tr>
 	</table>
-
 </div>

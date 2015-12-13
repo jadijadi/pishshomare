@@ -1,0 +1,31 @@
+{
+  "name": "pishshomare",
+  "version": "1.0.0",
+  "description": "Pishshomare AngularJS application",
+  "main": "index.js",
+  "dependencies": {
+    "angular": "^1.2.29",
+    "font-awesome": "^4.5.0",
+    "angular-animate": "^1.2.29",
+    "bootstrap": "^3.3.6",
+    "angular-route": "^1.2.29",
+    "jquery": "^2.1.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mamos98/pishshomare.git"
+  },
+  "keywords": [
+    "pishshomare"
+  ],
+  "author": "Jadi.net",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/mamos98/pishshomare/issues"
+  },
+  "homepage": "https://github.com/mamos98/pishshomare#readme"
+}
