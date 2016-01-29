@@ -5,7 +5,7 @@
 	  </div>
 	</form>
 	<table class="table table-striped col-xs-12">
-		<tr  ng-repeat="tehranCode in tehranCode | filter: query | orderBy: 'name' ">
+		<tr  ng-repeat="tehranCode in tehranCodeFilter = (tehranCode | filter: query) | orderBy: 'name' ">
 			<td>
         {{tehranCode.name}}
         <div class=eng>
@@ -14,5 +14,13 @@
         <label ng-repeat="areas in tehranCode.areas | filter: query | orderBy: 'name' " class=area>{{areas.name}}،&nbsp;</label>
       </td>
 	  </tr>
+		<tr ng-hide="tehranCodeFilter.length">
+			<td>
+				متاسفانه یافت نشد
+				<div class=eng>
+					لطفا مورد دیگری را جستجو کنید
+				</div>
+			</td>
+		</tr>
 	</table>
 </div>

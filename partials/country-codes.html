@@ -5,13 +5,21 @@
 	  	</div>
 	</form>
 	<table class="table table-striped col-xs-12">
-		<tr ng-repeat="code in codes | filter: query | orderBy: 'name' ">
+		<tr ng-repeat="code in codesFilter = (codes | filter: query) | orderBy: 'name' ">
 			<td>
 				{{code.name}}
 				<div class=eng>
 					{{code.eng}}
 				</div>
 			</td>
-	  </tr>
+	    </tr>
+		<tr ng-hide="codesFilter.length">
+			<td>
+				متاسفانه یافت نشد
+				<div class=eng>
+					لطفا مورد دیگری را جستجو کنید
+				</div>
+			</td>
+		</tr>
 	</table>
 </div>
