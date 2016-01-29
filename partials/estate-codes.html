@@ -2,6 +2,7 @@
 	<form class="form-horizontal col-xs-12">
 	  	<div class="form-group form-group-lg has-error">
 				<input class="form-control " id="query inputError" ng-model="query" type="text" placeholder="{{placeholder}}" autofocus>
+				<a ng-click="query = ''" ng-show="query.length > 0" class="clearQuery">X</a>
 	  	</div>
 	</form>
 	<table class="table table-striped col-xs-12">

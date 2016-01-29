@@ -134,3 +134,11 @@ h2.text-white {
     left: 25%;
     right: 25%;
 }
+
+.clearQuery {
+	float: left;
+	position: absolute;
+	left: 0;
+	top: 25px;
+	cursor: pointer;
+}
