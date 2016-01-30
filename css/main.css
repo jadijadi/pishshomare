@@ -32,9 +32,13 @@ body .header .navbar {
 	margin: 0;
 }
 
+body .content .search-box {
+	padding-bottom: 25px;
+}
+
 body .content .search-box{
 	box-shadow: 0 0.4em .5em #404040;
-	min-height: 50em;
+	/*min-height: 50em;*/
 	background: white;
 	overflow: auto;
 }
@@ -133,4 +137,12 @@ h2.text-white {
     top: auto;
     left: 25%;
     right: 25%;
+}
+
+.clearQuery {
+	float: left;
+	position: absolute;
+	left: 0;
+	top: 25px;
+	cursor: pointer;
 }
