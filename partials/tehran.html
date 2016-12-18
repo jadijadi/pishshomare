@@ -1,0 +1,28 @@
+<div>
+    <form class="form-horizontal col-xs-12">
+        <div class="form-group form-group-lg has-success">
+            <input class="form-control " id="query inputSuccess" ng-model="query" type="text"
+                   placeholder="پیش شماره یا نام مناطق" autofocus>
+            <a ng-click="query = ''" ng-show="query.length > 0" class="clearQuery">X</a>
+        </div>
+    </form>
+    <table class="table table-striped col-xs-12">
+        <tr ng-repeat="tehranCode in tehranCodeFilter = (tehranCode | filter: query) | orderBy: 'name' ">
+            <td>
+                {{tehranCode.name}}
+                <div class=eng>
+                    {{tehranCode.eng}}
+                </div>
+                <label ng-repeat="areas in tehranCode.areas | filter: query | orderBy: 'name' " class=area>{{areas.name}}،&nbsp;</label>
+            </td>
+        </tr>
+        <tr ng-hide="tehranCodeFilter.length">
+            <td>
+                متاسفانه یافت نشد
+                <div class=eng>
+                    لطفا مورد دیگری را جستجو کنید
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>

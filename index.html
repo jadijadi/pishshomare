@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <!-- Meta Data Informations -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>پیش شماره | Pishshomare</title>
+    <meta name="description" content="جستجوی پیش شماره و کد استان ها و شهرهای ایران">
+    <meta name="author" content="Jadi.net | جادی.نت">
+    <!-- Adding Favicon -->
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <!-- Adding All Stylesheets -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/bootstrap-rtl.css">
+    <link rel="stylesheet" href="css/fontfaces.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/tcon.css">
+    <!-- Adding All Scripts And JS Files -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-animate.min.js"></script>
+    <script src="js/angular-route.min.js"></script>
+    <script src="js/keymapping.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/jquery.sticky.js"></script>
+    <script src="js/particles.js"></script>
+</head>
+
+<body ng-app="MyApp" ng-controller="MainCtrl">
+
+<div class="container-fluid">
+    <div class="header row">
+        <div class="well well-sm">
+            <div id="particles-js"></div>
+            <h2 class="text-white">پیش شماره: راهنمای شماره های شما </h2>
+        </div>
+        <nav class="navbar navbar-inverse" id="sticky">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myNavbar"
+                            aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar top-bar"></span>
+                        <span class="icon-bar middle-bar"></span>
+                        <span class="icon-bar bottom-bar"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse " id="myNavbar">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#/estates"><i class="fa fa-mobile"></i> کد استان‌ها و موبایل</a>
+                        </li>
+                        <li><a href="#/countries"><i class="fa fa-globe"></i> کد کشورها</a></li>
+                        <li><a href="#/plates"><i class="fa fa-car"></i> پلاک خودرو</a></li>
+                        <li><a href="#/necessary"><i class="fa fa-ambulance"></i> شماره‌های ضروری</a></li>
+                        <li><a href="#/tehran"><i class="fa fa-tty"></i> پیش‌شماره‌های تهران</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-left">
+                        <li><a href="#/about"><i class="fa fa-user"></i> درباره</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <!-- row for content-->
+    <div class="row content">
+        <!-- middle -->
+        <div class="col-sm-6 col-sm-offset-3 search-box">
+            <!-- partials placeholder -->
+            <div ng-view></div>
+        </div>
+        <!-- middle -->
+    </div>
+    <!-- row for content-->
+</div>
+<script type="text/javascript">
+</script>
+</body>
+</html>

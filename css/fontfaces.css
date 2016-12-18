@@ -1,0 +1,46 @@
+/*
+ Vazir A Persian (Farsi) Font
+ by Saber Rastikerdar
+ http://rastikerdar.github.io/vazir-font/
+ https://github.com/rastikerdar/vazir-font
+*/
+
+@font-face {
+  font-family: Vazir;
+  src: url('../fonts/Vazir.eot');
+  src: url('../fonts/Vazir.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/Vazir.woff') format('woff'),
+       url('../fonts/Vazir.ttf') format('truetype');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: Vazir;
+  src: url('../fonts/Vazir-Bold.eot');
+  src: url('../fonts/Vazir-Bold.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/Vazir-Bold.woff') format('woff'),
+       url('../fonts/Vazir-Bold.ttf') format('truetype');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: Vazir;
+  src: url('../fonts/Vazir-Light.eot');
+  src: url('../fonts/Vazir-Light.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/Vazir-Light.woff') format('woff'),
+       url('../fonts/Vazir-Light.ttf') format('truetype');
+  font-weight: 300;
+}
+
+body {
+    font-family: Vazir, Tahoma, "Open Sans", Helvetica, Arial, sans-serif;
+}
+
+body.custom-font-enabled {
+        font-family: Vazir, Tahoma, "Open Sans", Helvetica, Arial, sans-serif;
+}
+
+body h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, .navbar.navbar-inverse{
+        font-family: Vazir, Tahoma, "Open Sans", Helvetica, Arial, sans-serif;
+        font-weight: bold;
+}

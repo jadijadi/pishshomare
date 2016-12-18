@@ -1,0 +1,148 @@
+.eng {
+	font-size: 0.9em;
+	color: #ADAAAA;
+	margin-top: 8pt;
+}
+
+.area {
+    font-size: 0.8em;
+    font-style: normal;
+    color: #999;
+    margin-top: 8pt;
+    margin-bottom: 8pt;
+}
+
+body {
+	text-align: center;
+	font-size: 16px;
+	padding-bottom: 5em;
+	background: url(../images/pattern.png)!important;
+}
+
+body .header .well{
+	background: #333;
+	border-bottom: solid 1px #222;
+	color: white;
+	margin-bottom: 0;
+	border-radius: 0;
+	border: 0;
+}
+
+body .header .navbar {
+	margin: 0;
+}
+
+body .content .search-box {
+	padding-bottom: 25px;
+}
+
+body .content .search-box{
+	box-shadow: 0 0.4em .5em #404040;
+	/*min-height: 50em;*/
+	background: white;
+	overflow: auto;
+}
+
+body .content .search-box input {
+	margin-top: 1em;
+	line-height: 2em !important;
+}
+
+body .content .search-box table {
+	font-size: 1.4em;
+}
+
+body .footer {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	box-shadow: 0 -.04em 1em rgb(44, 44, 44);
+}
+
+body .footer .well{
+	background: #333;
+	border-bottom: solid 1px #222;
+	color: white;
+	margin-bottom: 0;
+	border-radius: 0;
+	border: 0;
+	padding: 1em;
+}
+
+body .footer .well p {
+	margin-bottom: 0;
+	line-height: 1.5em;
+}
+
+.ng-enter, .ng-move{
+	-webkit-animation: fadeIn 0.5s;
+	-moz-animation: fadeIn 0.5s;
+	-o-animation: fadeIn 0.5s;
+	animation: fadeIn 0.5s;
+}
+
+.ng-leave{
+	-webkit-animation: fadeOut 0.5s;
+	-moz-animation: fadeOut 0.5s;
+	-o-animation: fadeOut 0.5s;
+	animation: fadeOut 0.5s;
+}
+
+.form-group-lg .form-control {
+	text-align:center;
+}
+
+
+@media (max-width: 980px){
+	.header h2{
+		font-size: 1.5em;
+		margin: 0;
+		line-height: 1.5;
+	}
+
+	body .content .search-box table{
+		font-size: 1em;
+	}
+}
+
+@media (max-width: 767px){
+	.header h2{
+		font-size: 1em;
+		margin: 0;
+		line-height: 1.5;
+
+	}
+	body .content .search-box {
+		max-width: 30em;
+		margin: auto;
+	}
+}
+/* Added after UX Optimization */
+.navbar{
+	border-radius: 0px!important;
+}
+.well{
+	height: 200px;
+}
+nav#sticky{
+	z-index: 1;
+}
+.text-white{
+	color: #ffffff;
+}
+h2.text-white {
+    position: absolute;
+    z-index: 100;
+    margin-top: -45%;
+    top: auto;
+    left: 20%;
+    right: 20%;
+}
+
+.clearQuery {
+	float: left;
+	position: absolute;
+	left: 0;
+	top: 25px;
+	cursor: pointer;
+}
