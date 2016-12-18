@@ -44,3 +44,7 @@ body h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, .navbar.navbar-invers
         font-family: Vazir, Tahoma, "Open Sans", Helvetica, Arial, sans-serif;
         font-weight: bold;
 }
+
+body.custom-font-enabled {
+        font-family: Vazir, Tahoma, "Open Sans", Helvetica, Arial, sans-serif;
+}
