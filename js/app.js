@@ -28,6 +28,10 @@ app.config(['$routeProvider',
             templateUrl: 'partials/about.html',
             controller: 'AboutCtrl'
         }).
+        when('/embassies',{
+            templateUrl: 'partials/embassies.html',
+            controller: 'EmbassiesCtrl'
+    }).
       otherwise({
         redirectTo: '/estates'
       });
@@ -65,12 +69,17 @@ app.controller("PlatesCtrl",['$scope','CodeSrv', function($scope,CodeSrv) {
 }]);
 
 app.controller("TehranCodesCtrl",['$scope','CodeSrv', function($scope,CodeSrv) {
-    $scope.tehranCode = CodeSrv.getTehranCodes()
+    $scope.tehranCode = CodeSrv.getTehranCodes();
     $scope.placeholder = "پیش‌شماره یا نام مرکز یا نام منطقه";
+}]);
+app.controller("EmbassiesCtrl",['$scope','CodeSrv', function ($scope,CodeSrv    ) {
+    $scope.embassies = CodeSrv.getEmbassies();
+    $scope.placeholder = "نام یا شماره یا آدرس";
+
 }]);
 app.controller("AboutCtrl",['$scope',function($scope){
    $scope.placeholder = "Pishshomare | پیش شماره"
-}])
+}]);
 
 app.factory("CodeSrv",function(){
 
@@ -861,8 +870,79 @@ app.factory("CodeSrv",function(){
     ];
     //tnx http://sazinco.ir/
 
-
-    var __all = [estateCodes,countryCodes,mobileCodes,plates,necessary,tehranCodes];
+    var embassies = [
+              {
+                name: "جمهوری آذربایجان",
+                eng:"Republic of Azerbaijan",
+                addr:"تهران، دروس، بلوار شهرزاد، خیابان راستوان، شماره 16",
+                phone:"22563146 , 22563147 , 22554255",
+                email:"",website:"http://tehran.mfa.gov.az",description:""
+              },
+              {
+                name: "جمهوری آرژانتین",
+                eng:"",
+                addr:"تهران، دروس، خیابان یارمحمدی،کوچه قو، شماره6",
+                phone:"22577433 , 22575555 , 22575932 , 22575935",
+                email:"",
+                website:"",
+                description:""
+              },
+              {
+                name: "جمهوری فدرال آلمان",
+                eng:"",
+                addr:"تهران ، خیابان فردوسی، شماره 324",
+                phone:"39990000",
+                email:"",
+                website:"http://www.germanembassy-tehran.org/",
+                description:""
+              },
+              {
+                name: "ایالات متحده آمریکا",
+                eng:"United states of America",
+                addr:"تهران، پاسداران، گلستان پنجم پلاک 39",
+                phone:"22542178",
+                email:"",
+                website:"https://www.eda.admin.ch/",
+                description:"دفتر حفاظت منافع واقع در سفارت سوییس"
+              },
+              {
+                name: "جمهوری اتریش",
+                eng:"",
+                addr:"تهران، خیابان مقدسی، خیابان احمدی زمانی، کوچه میرولی، شماره 8",
+                phone:"22750040 , 2275 0046",
+                email:"",
+                website:"http://www.otrish.ir",
+                description:""
+              },
+              {
+                name: "پادشاهى اردن هاشمى",
+                eng:"",
+                addr:"تهران، زعفرانیه، خیابان فلاحی، خیابان طاهری، خیابان البرزکوه، شماره 24",
+                phone:"22752001",
+                email:"",
+                website:"",
+                description:""
+              },
+              {
+                name: "جمهوری ارمنستان",
+                eng:"",
+                addr:"تهران، خیابان جمهوری، خیابان رازی، خیابان استاد شهریار، شماره 32",
+                phone:"66704833 , 66760509",
+                email:"",
+                website:"",
+                description:""
+              },
+              {
+                name: "جمهوری اسلامی افغانستان",
+                eng:"",
+                addr:"تهران، شهرک قدس، خیابان ایران زمین، شماره 73",
+                phone:"8850 2666 , 88096865 , 88082734",
+                email:"",
+                website:"http://www.Afghanembassy.ir",
+                description:""
+              },
+    ];
+    var __all = [estateCodes,countryCodes,mobileCodes,plates,necessary,tehranCodes,embassies];
     var __addkeymapping = function(){
 	    for (var i = 0, len = __all.length; i < len; i++){
 		var __arr = __all[i];
@@ -890,6 +970,9 @@ app.factory("CodeSrv",function(){
         },
         getTehranCodes : function(){
             return tehranCodes;
+        },
+        getEmbassies    :   function () {
+            return embassies;
         }
     }
 
