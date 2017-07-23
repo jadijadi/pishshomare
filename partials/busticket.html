@@ -7,30 +7,15 @@
         </div>
     </form>
     <table class="table table-striped col-xs-12">
-        <tr ng-repeat="embassies in embassiesFilter = (embassies | filter: query) | orderBy: 'name' ">
+        <tr ng-repeat="busticket in busticketFilter = (busticket | filter: query) | orderBy: 'name' ">
             <td>
-                {{embassies.name}}
-                <div class=eng>
-                    {{embassies.eng}}
-                </div>
-                <div class="addr">
-                <b>آدرس : </b> {{embassies.addr}}
-                </div>
+                {{busticket.name}}
                 <div class="phone">
-                <b>تلفن : </b>{{embassies.phone}}
-                </div>
-                <div class="email">
-                  <b> ایمیل : </b> {{embassies.email}}
-                </div>
-                <div class="website">
-                  <b> وب‌سایت : </b><a href="{{embassies.website}}">وب‌سایت سفارت {{embassies.name}}</a>
-                </div>
-                <div class="description">
-                  <b> توضیحات : </b> {{embassies.description}}
+                <b>تلفن : </b>{{busticket.phone}}
                 </div>
             </td>
         </tr>
-        <tr ng-hide="embassiesFilter.length">
+        <tr ng-hide="busticketFilter.length">
             <td>
                 متاسفانه یافت نشد
                 <div class=eng>
