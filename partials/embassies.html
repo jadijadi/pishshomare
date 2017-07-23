@@ -1,0 +1,42 @@
+<div>
+    <form class="form-horizontal col-xs-12">
+        <div class="form-group form-group-lg has-warning">
+            <input class="form-control " id="query inputWarning" ng-model="query" type="text"
+                   placeholder="شماره‌های ضروری" autofocus>
+            <a ng-click="query = ''" ng-show="query.length > 0" class="clearQuery">X</a>
+        </div>
+    </form>
+    <table class="table table-striped col-xs-12">
+        <tr ng-repeat="embassies in embassiesFilter = (embassies | filter: query) | orderBy: 'name' ">
+            <td>
+                {{embassies.name}}
+                <div class=eng>
+                    {{embassies.eng}}
+                </div>
+                <div class="addr">
+                <b>آدرس : </b> {{embassies.addr}}
+                </div>
+                <div class="phone">
+                <b>تلفن : </b>{{embassies.phone}}
+                </div>
+                <div class="email">
+                  <b> ایمیل : </b> {{embassies.email}}
+                </div>
+                <div class="website">
+                  <b> وب‌سایت : </b><a href="{{embassies.website}}">وب‌سایت سفارت {{embassies.name}}</a>
+                </div>
+                <div class="description">
+                  <b> توضیحات : </b> {{embassies.description}}
+                </div>
+            </td>
+        </tr>
+        <tr ng-hide="embassiesFilter.length">
+            <td>
+                متاسفانه یافت نشد
+                <div class=eng>
+                    لطفا مورد دیگری را جستجو کنید
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
