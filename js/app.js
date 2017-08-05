@@ -282,8 +282,8 @@ app.factory("CodeSrv",function(){
 
     ];
     var estateCodes = [
-        { name:  "آذربایجان شرقی ۰۴۱", eng: "Azerbaijan East 041"},
-        { name:  "آذربایجان غربی ۰۴۴", eng: "Azerbaijan West 044"},
+        { name:  "آذربایجان شرقی ۰۴۱", eng: "East Azerbaijan 041"},
+        { name:  "آذربایجان غربی ۰۴۴", eng: "West Azerbaijan 044"},
         { name:  "اردبیل ۰۴۵", eng: "Ardabil 045"},
         { name:  "اصفهان ۰۳۱", eng: "Isfahan 031"},
         { name:  "البرز ۰۲۶", eng: "Alborz 026"},
@@ -597,8 +597,8 @@ app.factory("CodeSrv",function(){
    ];
 
    var plates = [
-        { name:  "آذربایجان شرقی ۱۵،۲۵،۳۵", eng: "Azerbaijan East 15,25,35"},
-        { name:  "آذربایجان غربی ۱۷،۲۷،۳۷", eng: "Azerbaijan West 17,27,37"},
+        { name:  "آذربایجان شرقی ۱۵،۲۵،۳۵", eng: "East Azerbaijan 15,25,35"},
+        { name:  "آذربایجان غربی ۱۷،۲۷،۳۷", eng: "West Azerbaijan 17,27,37"},
         { name:  "اردبیل ۹۱", eng: "Ardabil 91"},
         { name:  "اصفهان ۱۳،۲۳،۴۳،۵۳", eng: "Isfahan 13,23,43,53"},
         { name:  "البرز ۶۸", eng: "Alborz 68"},
