@@ -5,6 +5,15 @@ CACHE MANIFEST
 
 # Main page
 index.html
+partials/about.html
+partials/busticket.html
+partials/country-codes.html
+partials/embassies.html
+partials/estate-codes.html
+partials/main-template.html
+partials/necessary-codes.html
+partials/plates.html
+partials/tehran.html
 
 
 # CSS
