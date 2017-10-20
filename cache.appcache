@@ -1,7 +1,7 @@
 CACHE MANIFEST
 
 # Adds the ability to play the game offline.
-# Updated: 2017-10-20 15:06:47.058
+# Updated: 2017-10-20 23:46:17.770
 
 # Main page
 index.html
@@ -29,6 +29,10 @@ css/tcon.css
 # Other resources
 images/pattern.png
 manifest.json
+images/favicon/4.png
+images/favicon/1.png
+images/favicon/2.png
+images/favicon/3.png
 
 # Fonts
 fonts/fontawesome-webfont.ttf
