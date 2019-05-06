@@ -9,9 +9,11 @@
     "angular-animate": "^1.2.29",
     "bootstrap": "^3.3.6",
     "angular-route": "^1.2.29",
-    "jquery": "^2.1.4"
+    "jquery": ">=3.4.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+   "jquery": ">=3.4.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
