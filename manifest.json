@@ -1,0 +1,32 @@
+{
+  "name": "پیش شماره | Pishshomare",
+  "short_name": "Pishshomare",
+  "display": "minimal-ui",
+  "start_url": "/",
+  "theme_color": "#673ab6",
+  "background_color": "#111111",
+  "icons": [
+    {
+      "src": "images/favicon/3.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+	{
+	  "src": "images/favicon/2.png",
+      "sizes": "72x72",
+      "type": "image/png"
+	},
+	{
+	  "src": "images/favicon/1.png",
+      "sizes": "57x57",
+      "type": "image/png"
+	},
+	{
+	  "src": "images/favicon/4.png",
+      "sizes": "32x32",
+      "type": "image/png"
+	}
+  ],
+  "display": "fullscreen",
+  "orientation": "portrait"
+}
