@@ -1,0 +1,60 @@
+CACHE MANIFEST
+
+# Adds the ability to play the game offline.
+# Updated: 2017-10-20 23:46:17.770
+
+# Main page
+index.html
+partials/about.html
+partials/busticket.html
+partials/country-codes.html
+partials/embassies.html
+partials/estate-codes.html
+partials/main-template.html
+partials/necessary-codes.html
+partials/plates.html
+partials/tehran.html
+
+
+# CSS
+css/bootstrap.min.css
+css/font-awesome.min.css
+css/main.css
+css/bootstrap-rtl.css
+css/fontfaces.css
+css/animate.css
+css/tcon.css
+
+
+# Other resources
+images/pattern.png
+manifest.json
+images/favicon/4.png
+images/favicon/1.png
+images/favicon/2.png
+images/favicon/3.png
+
+# Fonts
+fonts/fontawesome-webfont.ttf
+fonts/fontawesome-webfont.woff
+fonts/fontawesome-webfont.woff2
+
+# JavaScript
+js/jquery.min.js
+js/bootstrap.min.js
+js/angular.min.js
+js/angular-animate.min.js
+js/angular-route.min.js
+js/keymapping.js
+js/app.js
+js/main.js
+js/jquery.sticky.js
+js/particles.js
+
+
+
+favicon.ico
+
+
+NETWORK:
+*

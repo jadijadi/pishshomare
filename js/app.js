@@ -282,8 +282,8 @@ app.factory("CodeSrv",function(){
 
     ];
     var estateCodes = [
-        { name:  "آذربایجان شرقی ۰۴۱", eng: "Azerbaijan East 041"},
-        { name:  "آذربایجان غربی ۰۴۴", eng: "Azerbaijan West 044"},
+        { name:  "آذربایجان شرقی ۰۴۱", eng: "East Azerbaijan 041"},
+        { name:  "آذربایجان غربی ۰۴۴", eng: "West Azerbaijan 044"},
         { name:  "اردبیل ۰۴۵", eng: "Ardabil 045"},
         { name:  "اصفهان ۰۳۱", eng: "Isfahan 031"},
         { name:  "البرز ۰۲۶", eng: "Alborz 026"},
@@ -591,14 +591,14 @@ app.factory("CodeSrv",function(){
       {name: "تالیا ۰۹۳۲", eng: "Taliya 0932"},
       {name: "۰۹۳۱ اسپادان", eng: "Spadan 0931"},
       {name: "۰۹۳۴ شبکه مستقل تلفن همراه کیش", eng: "TKC 0934"},
-      {name: "۰۹۱۰ ، ۰۹۱۹ ، ۰۹۹۰ اپراتور اول ، همراه اول", eng: "0910 0919 0990 MCI"},
-      {name: "۰۹۰۱ ، ۰۹۰۲ ، ۰۹۰۳ ، ۰۹۳۰ ، ۰۹۳۳ ، ۰۹۳۵ ، ۰۹۳۶ ، ۰۹۳۷ ، ۰۹۳۸ ، ۰۹۳۹ ایرانسل", eng: "Irancell 0901 0902 0903 0930 0933 0935 0936 0937 0938 0939"},
+      {name: "۰۹۱۰ ، ۰۹۱۹ ، ۰۹۹۰ ، ۰۹۹۱ اپراتور اول ، همراه اول", eng: "0910 0919 0990 0991 MCI"},
+      {name: "۰۹۰۱ ، ۰۹۰۲ ، ۰۹۰۳ ، ۰۹۰۵ ، ۰۹۳۰ ، ۰۹۳۳ ، ۰۹۳۵ ، ۰۹۳۶ ، ۰۹۳۷ ، ۰۹۳۸ ، ۰۹۳۹ ایرانسل", eng: "Irancell 0901 0902 0903 0905 0930 0933 0935 0936 0937 0938 0939"},
       {name: "۰۹۲۰ ، ۰۹۲۱، ۰۹۲۲ رایتل ، تامین تلکام", eng: "0920, 0921, 0922 Rightel"}
    ];
 
    var plates = [
-        { name:  "آذربایجان شرقی ۱۵،۲۵،۳۵", eng: "Azerbaijan East 15,25,35"},
-        { name:  "آذربایجان غربی ۱۷،۲۷،۳۷", eng: "Azerbaijan West 17,27,37"},
+        { name:  "آذربایجان شرقی ۱۵،۲۵،۳۵", eng: "East Azerbaijan 15,25,35"},
+        { name:  "آذربایجان غربی ۱۷،۲۷،۳۷", eng: "West Azerbaijan 17,27,37"},
         { name:  "اردبیل ۹۱", eng: "Ardabil 91"},
         { name:  "اصفهان ۱۳،۲۳،۴۳،۵۳", eng: "Isfahan 13,23,43,53"},
         { name:  "البرز ۶۸", eng: "Alborz 68"},
