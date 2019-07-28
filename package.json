@@ -19,7 +19,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mamos98/pishshomare.git"
+    "url": "git+https://github.com/jadijadi/pishshomare.git"
   },
   "keywords": [
     "pishshomare"
@@ -27,7 +27,7 @@
   "author": "Jadi.net",
   "license": "GPL-3.0",
   "bugs": {
-    "url": "https://github.com/mamos98/pishshomare/issues"
+    "url": "https://github.com/jadijadi/pishshomare/issues"
   },
-  "homepage": "https://github.com/mamos98/pishshomare#readme"
+  "homepage": "https://github.com/jadijadi/pishshomare#readme"
 }
