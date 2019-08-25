@@ -1049,6 +1049,15 @@ var busticket=[
                 description:""
               },
               {
+                name: "نیوزیلند (زلاندنو)",
+                eng:"",
+                addr:"تهران، خیابان اقدسیه، خیابان موحدی دانش، خیابان گلستان شمالی، کوچه سوسن، کوچه پارک دوم،  پلاک ۸",
+                phone:"2612 2175",
+                email:"nzembassytehran@hotmail.co.nz",
+                website:"https://www.mfat.govt.nz/en/countries-and-regions/middle-east/iran/new-zealand-embassy",
+                description:"ساعت کار سفارت نیوزیلند: یکشنبه تا پنج‌شنبه ۱۰:۰۰ تا ۱۲:۳۰"
+              },
+              {
                 name: "پادشاهى اردن هاشمى",
                 eng:"",
                 addr:"تهران، زعفرانیه، خیابان فلاحی، خیابان طاهری، خیابان البرزکوه، شماره 24",
